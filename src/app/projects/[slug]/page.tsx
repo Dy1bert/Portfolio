@@ -2,6 +2,9 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import VideoPlayer from "@/components/VideoPlayer";
+import {Carousel} from "@/components/ui/carousel";
+import CarouselWithThumbs from "@/components/ProjectCarousel";
+import ProjectCarousel from "@/components/ProjectCarousel";
 
 interface PageProps {
     params: Promise<{
@@ -104,27 +107,14 @@ export default async function ProjectPage({ params }: PageProps) {
 
 
                 {/* Screenshot Gallery */}
-                {project.Name && (
+                {project.Gallery && (
                     <div className="mt-16">
 
                         <h2 className="text-2xl font-semibold mb-6">
                             Screenshots
                         </h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-
-                            {project.Gallery?.map((img: string, i: number) => (
-                                <Image
-                                    key={i}
-                                    src={img}
-                                    alt={`Screenshot ${i}`}
-                                    width={600}
-                                    height={400}
-                                    className="rounded-xl"
-                                />
-                            ))}
-
-                        </div>
+                        <ProjectCarousel project={project} />
 
                     </div>
                 )}
