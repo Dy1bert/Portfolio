@@ -2,8 +2,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import VideoPlayer from "@/components/VideoPlayer";
-import {Carousel} from "@/components/ui/carousel";
-import CarouselWithThumbs from "@/components/ProjectCarousel";
 import ProjectCarousel from "@/components/ProjectCarousel";
 
 interface PageProps {
@@ -24,10 +22,10 @@ export default async function ProjectPage({ params }: PageProps) {
     }
 
     return (
-        <main className="min-h-screen w-full flex flex-col items-center bg-background-a text-white px-6 py-16">
+        <main className="min-h-screen w-full flex flex-col items-center bg-background-a text-background-b px-6 py-16">
 
                 {/* Title */}
-                <h1 className="text-6xl font-bold mt-16">
+                <h1 className="text-8xl font-bold mt-16">
                     {project.Name}
                 </h1>
 
@@ -75,7 +73,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
 
                 {/* Hero Image */}
-                <div className="mt-10 flex flex-col items-center">
+                <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full pt-8 flex flex-col items-center">
                     <Image
                         src={project.ImgSrc}
                         alt={project.Name}
@@ -88,36 +86,29 @@ export default async function ProjectPage({ params }: PageProps) {
 
 
                 {/* Description */}
-                <div className="mt-10 text-lg text-gray-300 leading-relaxed">
+                <div className="mt-8 text-lg text-gray-300 leading-relaxed max-w-6xl w-full whitespace-pre-line">
                     {project.LongDescription}
                 </div>
 
 
                 {/* Video Section */}
-                {project.YTID && (
-                    <div className="mt-16">
+                <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                    <div className="mt-8 flex flex-col md:items-start items-center">
                         <h2 className="text-2xl font-semibold mb-6">
                             Gameplay
                         </h2>
-                        <div className="mt-4 flex flex-col items-center">
                             <VideoPlayer VideoID={project.YTID}/>
-                        </div>
                     </div>
-                )}
 
 
                 {/* Screenshot Gallery */}
-                {project.Gallery && (
-                    <div className="mt-16">
-
-                        <h2 className="text-2xl font-semibold mb-6">
-                            Screenshots
-                        </h2>
-
-                        <ProjectCarousel project={project} />
-
-                    </div>
-                )}
+                    <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                        <div className="mt-8 flex flex-col md:items-start items-center">
+                            <h2 className="text-2xl font-semibold mb-6">
+                                Gallery
+                            </h2>
+                                <ProjectCarousel project={project}/>
+                        </div>
         </main>
     );
 }

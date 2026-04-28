@@ -40,22 +40,24 @@ export default function ProjectCarousel({ project }: ProjectCardProps) {
   );
 
   return (
-    <div className="mx-auto max-w-xs">
-      <Carousel className="w-full max-w-xs" setApi={setApi}>
+    <div className="w-full max-w-xl mx-auto">
+      <Carousel className="w-full max-w-xl" setApi={setApi}>
         <CarouselContent>
           {project.Gallery.map((image) => (
             <CarouselItem key={image}>
-              <img
-                alt="dddepth-248"
-                className="size-full rounded-xl object-cover"
-                src={image}
-              />
+              <div className="w-full aspect-video flex justify-center rounded-xl">
+                <img
+                    alt="dddepth-248"
+                    className="max-h-full max-w-full object-contain rounded-xl"
+                    src={image}
+                />
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel>
 
-      <Carousel className="mt-4 w-full max-w-xs">
+      <Carousel className="mt-4 w-full max-w-xl">
         <div className="mask-x-from-90%">
           <CarouselContent className="my-1 flex">
             {project.Gallery.map((image, index) => (
@@ -67,11 +69,13 @@ export default function ProjectCarousel({ project }: ProjectCardProps) {
                 key={image}
                 onClick={() => handleThumbClick(index)}
               >
-                <img
-                  alt="dddepth-248"
-                  className="size-full rounded-xl object-cover"
-                  src={image}
-                />
+                <div className="w-full aspect-video flex justify-center rounded-xl">
+                  <img
+                      alt="dddepth-248"
+                      className="max-h-full max-w-full object-contain rounded-xl"
+                      src={image}
+                  />
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>

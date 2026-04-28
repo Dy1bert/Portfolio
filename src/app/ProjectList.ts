@@ -23,15 +23,17 @@ export const ProjectList: Project[] = [
         slug: "word-race",
         Name: "Word Race",
         ShortDescription: "Mobile word game built in UE5.",
-        LongDescription: "Word Race is an in-development word game for mobile. Build your dream garage and race your way to victory! Currently focusing on Android, I am the sole developer of this project. Release Date: TBD.",
+        LongDescription: "Word Race is a prototype word game for mobile. Originally started as a University project, Word Race uses Unreal Engine 5 to combine to world of word games with that of motorsports. " +
+            "Build your dream garage and race your way to victory! Currently setup on Android exclusively, I am the sole developer of this project, and I hope to revisit this soon to make it available on the Play Store!" +
+            "\n\nNote: This project contains AI-generated 2D artwork in the logo!",
         YTID: "tuZerEOtcpQ",
         ImgSrc: "/WordRace-Logo.png",
         Engine: "Unreal Engine 5",
         Date: "July 2025",
         Role: "Solo Developer",
-        Gallery: ["/WordRace-Logo.png", "/WordRace-Logo.png","/WordRace-Logo.png","/WordRace-Logo.png","/WordRace-Logo.png","/WordRace-Logo.png"],
+        Gallery: ["/WordRace/WordRace-Logo.png", "/WordRace/WordRace_MediaSS.png"],
         ReleaseDate: "TBD",
-        Status: "In Development",
+        Status: "Prototype",
     },
     {
         ID: 1,
