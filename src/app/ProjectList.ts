@@ -1,24 +1,47 @@
-﻿export interface Project {
+﻿export type Progression = {
+    Title: string;
+    Body: string;
+    Image?: { src: string; alt: string };
+}
+
+export interface Project {
+    Type: "Game" | "Web";
     ID: number;
     slug: string;
-    YTID: string;
+
+    YTID?: string;
     ImgSrc: string;
 
     Name: string;
     ShortDescription: string;
     LongDescription: string;
 
-    TeamSize?: number;
-    Engine?: string;
     Date: string;
-    Role: string;
-    Gallery: string[];
-    ReleaseDate?: string;
-    Status: string;
+    Gallery: string[]
+
+    ProgressionPhases?: Progression[];
 }
 
-export const ProjectList: Project[] = [
+export interface GameProject extends Project {
+    Type: "Game";
+    TeamSize?: number;
+    Engine?: string;
+    Status: string;
+    ReleaseDate?: string;
+    Role: string;
+}
+
+export interface WebProject extends Project {
+    Type: "Web";
+    Framework: string;
+    URL?: string;
+}
+
+export type ProjectItem = GameProject | WebProject;
+
+export const ProjectList: ProjectItem[] = [
     {
+        Type: "Game",
         ID: 0,
         slug: "word-race",
         Name: "Word Race",
@@ -34,8 +57,24 @@ export const ProjectList: Project[] = [
         Gallery: ["/WordRace/WordRace-Logo.png", "/WordRace/WordRace_MediaSS.png"],
         ReleaseDate: "TBD",
         Status: "Prototype",
+        ProgressionPhases:[
+            {
+                Title: "Section 1 - Ideation",
+                Body: "This is how the game was thought of.........",
+            },
+            {
+                Title: "Section 2 - Planning",
+                Body: "This is how the game was planned.........",
+            },
+            {
+                Title: "Section 3 - Prototyping",
+                Body: "This is the first prototyping stage.........",
+                Image: { src: "/WordRace/WordRace_MediaSS.png", alt: "WordRace Media" },
+            },
+        ]
     },
     {
+        Type: "Game",
         ID: 1,
         slug: "floor-54",
         Name: "Floor 54",
@@ -51,6 +90,7 @@ export const ProjectList: Project[] = [
         Status: "Archived",
     },
     {
+        Type: "Game",
         ID: 2,
         slug: "pcg-road-builder-tool",
         Name: "PCG Road Builder Tool",
@@ -65,6 +105,7 @@ export const ProjectList: Project[] = [
         Status: "Archived",
     },
     {
+        Type: "Game",
         ID: 3,
         slug: "test",
         Name: "Test",
@@ -79,17 +120,17 @@ export const ProjectList: Project[] = [
         Status: "Archived",
     },
     {
+        Type: "Web",
         ID: 4,
-        slug: "test-2",
-        Name: "Test 2",
+        slug: "portfolio",
+        Name: "Portfolio",
         ShortDescription: "This is yet another project description",
         LongDescription: "This is another looooooooooooooooooooooooooooooooooooooongggg description",
         YTID: "",
         ImgSrc: "/TestBG.png",
-        Engine: "Unreal Engine 5",
+        Framework: "NextJS",
         Date: "07-2025",
-        Role: "Solo Developer",
         Gallery: ["/file.svg"],
-        Status: "Archived",
+        URL: "https://dy1bert.dev/",
     },
 ];

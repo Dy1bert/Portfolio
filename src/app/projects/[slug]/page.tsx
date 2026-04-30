@@ -30,26 +30,8 @@ export default async function ProjectPage({ params }: PageProps) {
                 </h1>
 
 
-                {/* Project Metadata */}
+                {/* Project Metadata -- General */}
                 <div className="flex flex-wrap gap-4 mt-8 text-sm text-gray-400">
-
-                    {project.Engine && (
-                        <span className="bg-neutral-800 px-3 py-1 rounded-lg">
-                            Engine: {project.Engine}
-                        </span>
-                    )}
-
-                    {project.Role && (
-                        <span className="bg-neutral-800 px-3 py-1 rounded-lg">
-                            Role: {project.Role}
-                        </span>
-                    )}
-
-                    {project.TeamSize && (
-                        <span className="bg-neutral-800 px-3 py-1 rounded-lg">
-                            Team Size: {project.TeamSize}
-                        </span>
-                    )}
 
                     {project.Date && (
                         <span className="bg-neutral-800 px-3 py-1 rounded-lg">
@@ -57,15 +39,43 @@ export default async function ProjectPage({ params }: PageProps) {
                         </span>
                     )}
 
-                    {project.Status && (
+                    {/* Project Metadata -- Games */}
+
+                    {project.Type === "Game" && project.Status && (
                         <span className="bg-neutral-800 px-3 py-1 rounded-lg">
                             Status: {project.Status}
                         </span>
                     )}
 
-                    {project.ReleaseDate && (
+                    {project.Type === "Game" && project.ReleaseDate && (
                         <span className="bg-neutral-800 px-3 py-1 rounded-lg">
                             Release Date: {project.ReleaseDate}
+                        </span>
+                    )}
+
+                    {project.Type === "Game" && project.Engine && (
+                        <span className="bg-neutral-800 px-3 py-1 rounded-lg">
+                            Engine: {project.Engine}
+                        </span>
+                    )}
+
+                    {project.Type === "Game" && project.Role && (
+                        <span className="bg-neutral-800 px-3 py-1 rounded-lg">
+                            Role: {project.Role}
+                        </span>
+                    )}
+
+                    {project.Type === "Game" && project.TeamSize && (
+                        <span className="bg-neutral-800 px-3 py-1 rounded-lg">
+                            Team Size: {project.TeamSize}
+                        </span>
+                    )}
+
+                    {/* Project Metadata -- Web */}
+
+                    {project.Type === "Web" && project.Framework && (
+                        <span className="bg-neutral-800 px-3 py-1 rounded-lg">
+                            Framework: {project.Framework}
                         </span>
                     )}
 
@@ -93,22 +103,36 @@ export default async function ProjectPage({ params }: PageProps) {
 
                 {/* Video Section */}
                 <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
-                    <div className="mt-8 flex flex-col md:items-start items-center">
-                        <h2 className="text-2xl font-semibold mb-6">
-                            Gameplay
-                        </h2>
-                            <VideoPlayer VideoID={project.YTID}/>
-                    </div>
+                <div className="mt-8 flex flex-col md:items-start items-center">
+                    <h2 className="text-2xl font-semibold mb-6">
+                        Gameplay
+                    </h2>
+                        <VideoPlayer VideoID={project.YTID}/>
+                </div>
+
+                {/* Progression Phases */}
+                {project.ProgressionPhases && (
+                    <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                )}
+
+                {project.ProgressionPhases && (
+                    project.ProgressionPhases.map((phase, index) => (
+                        <div className="mt-8 flex flex-col md:items-start items-center">
+                            <div>{phase.Title}</div>
+                            <div>{phase.Body}</div>
+                        </div>
+                    ))
+                )}
 
 
                 {/* Screenshot Gallery */}
-                    <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
-                        <div className="mt-8 flex flex-col md:items-start items-center">
-                            <h2 className="text-2xl font-semibold mb-6">
-                                Gallery
-                            </h2>
-                                <ProjectCarousel project={project}/>
-                        </div>
+                <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                <div className="mt-8 flex flex-col md:items-start items-center">
+                    <h2 className="text-2xl font-semibold mb-6">
+                        Gallery
+                    </h2>
+                        <ProjectCarousel project={project}/>
+                </div>
         </main>
     );
 }

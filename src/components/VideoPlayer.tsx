@@ -4,7 +4,7 @@ import React from 'react';
 import YouTube from "react-youtube";
 
 interface VideoPlayerProps {
-    VideoID: string;
+    VideoID: string | undefined;
 }
 
 const VideoPlayer = ({VideoID}: VideoPlayerProps) => {
