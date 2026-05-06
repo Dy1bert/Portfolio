@@ -1,6 +1,5 @@
 ﻿import React from 'react';
-import { ProjectList } from "@/app/ProjectList";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectShowcaseCarousel from "@/components/ProjectShowcaseCarousel";
 
 const ProjectShowcase = () => {
     return (
@@ -12,13 +11,8 @@ const ProjectShowcase = () => {
             <h1 className="mt-4 text-md text-background-b max-w-5xl">
                 Select the project card to see more information!
             </h1>
-            <div className="mt-40 mb-8 w-[80%] h-full grid grid-cols-1 md:grid-cols-3 gap-[5vw] md:mt-20">
-                {ProjectList.slice(0, 3).map((project) => (
-                    <ProjectCard
-                        key={project.ID}
-                        project={project}
-                    />
-                ))}
+            <div className="mt-40 mb-8 w-full h-full md:mt-20 justify-items-center">
+                <ProjectShowcaseCarousel/>
             </div>
         </section>
     );

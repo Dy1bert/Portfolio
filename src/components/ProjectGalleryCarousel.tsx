@@ -16,7 +16,7 @@ interface ProjectCardProps {
   project: Project;
 }
 
-export default function ProjectCarousel({ project }: ProjectCardProps) {
+export default function ProjectGalleryCarousel({ project }: ProjectCardProps) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
 

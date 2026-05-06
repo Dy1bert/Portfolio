@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import VideoPlayer from "@/components/VideoPlayer";
-import ProjectCarousel from "@/components/ProjectCarousel";
+import ProjectGalleryCarousel from "@/components/ProjectGalleryCarousel";
 
 interface PageProps {
     params: Promise<{
@@ -25,10 +25,9 @@ export default async function ProjectPage({ params }: PageProps) {
         <main className="min-h-screen w-full flex flex-col items-center bg-background-a text-background-b px-6 py-16">
 
                 {/* Title */}
-                <h1 className="text-8xl font-bold mt-16">
+                <h1 className="text-8xl corner-title mt-16">
                     {project.Name}
                 </h1>
-
 
                 {/* Project Metadata -- General */}
                 <div className="flex flex-wrap gap-4 mt-8 text-sm text-gray-400">
@@ -81,7 +80,6 @@ export default async function ProjectPage({ params }: PageProps) {
 
                 </div>
 
-
                 {/* Hero Image */}
                 <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full pt-8 flex flex-col items-center">
                     <Image
@@ -94,12 +92,10 @@ export default async function ProjectPage({ params }: PageProps) {
                     />
                 </div>
 
-
                 {/* Description */}
-                <div className="mt-8 text-lg text-gray-300 leading-relaxed max-w-6xl w-full whitespace-pre-line">
+                <div className="mt-8 text-lg text-background-b leading-relaxed max-w-6xl w-full whitespace-pre-line">
                     {project.LongDescription}
                 </div>
-
 
                 {/* Video Section */}
                 <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
@@ -114,16 +110,26 @@ export default async function ProjectPage({ params }: PageProps) {
                 {project.ProgressionPhases && (
                     <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
                 )}
-
+                {project.ProgressionPhases && (
+                    <div className="mt-8 flex flex-col max-w-3xl w-full md:items-start items-center">
+                        <h2 className="text-2xl font-semibold">
+                            Progression Phases
+                        </h2>
+                    </div>
+                )}
                 {project.ProgressionPhases && (
                     project.ProgressionPhases.map((phase, index) => (
-                        <div className="mt-8 flex flex-col md:items-start items-center">
-                            <div>{phase.Title}</div>
-                            <div>{phase.Body}</div>
-                        </div>
-                    ))
+                            <li key={index} className="mt-8 flex flex-col w-full max-w-3xl md:items-start items-center">
+                                <h2 className="tracking-[0.2em] text-xs">{phase.Title}</h2>
+                                <p className="mt-3 ml-6 leading-relaxed">{phase.Body}</p>
+                                {phase.Image && (
+                                    <div className="mt-6 overflow-hidden rounded-lg w-full">
+                                        <img src={phase.Image.src} alt={phase.Image.alt} className="aspect-video object-cover"/>
+                                    </div>
+                                )}
+                            </li>
+                        ))
                 )}
-
 
                 {/* Screenshot Gallery */}
                 <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
@@ -131,7 +137,7 @@ export default async function ProjectPage({ params }: PageProps) {
                     <h2 className="text-2xl font-semibold mb-6">
                         Gallery
                     </h2>
-                        <ProjectCarousel project={project}/>
+                        <ProjectGalleryCarousel project={project}/>
                 </div>
         </main>
     );

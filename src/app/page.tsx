@@ -9,7 +9,7 @@ export default function Home() {
           <div id={"home"}>
               <Hero/>
           </div>
-          <div id={"projects"}>
+          <div id={"projects"} className="scroll-mt-[50px]">
               <ProjectShowcase/>
           </div>
           <div id={"about"} className="scroll-mt-[50px]">

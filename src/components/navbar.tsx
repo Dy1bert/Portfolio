@@ -4,7 +4,7 @@ import React from 'react';
 import Link from "next/link";
 
 const Links = [
-    { href:"/projects", text:"Projects" },
+    { href:"/#projects", text:"Projects" },
     { href:"/#about", text:"About" },
     { href:"/#contact", text:"Contact" },
 ];

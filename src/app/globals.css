@@ -57,3 +57,34 @@ navbar{
   padding: calc(var(--spacing) * 6);
   color: var(--color-white);
 }
+
+/* Corner title made with help from AI */
+.corner-title {
+  position: relative;
+  display: inline-block;
+  padding: 20px 40px;
+}
+
+.corner-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  border-top: 3px solid white;
+  border-left: 3px solid white;
+  opacity: 60%;
+}
+
+.corner-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 35px;
+  height: 35px;
+  border-bottom: 3px solid white;
+  border-right: 3px solid white;
+  opacity: 60%;
+}
