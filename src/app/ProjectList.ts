@@ -92,9 +92,9 @@ export const ProjectList: ProjectItem[] = [
     {
         Type: "Game",
         ID: 2,
-        slug: "pcg-road-builder-tool",
-        Name: "PCG Road Builder Tool",
-        ShortDescription: "Road builder tool in UE5.",
+        slug: "pcg-road-tool",
+        Name: "PCG Road Tool",
+        ShortDescription: "Road builder tool in UE5 using PCG.",
         LongDescription: "This is another looooooooooooooooooooooooooooooooooooooongggg description",
         YTID: "UuTlaV8B75E",
         ImgSrc: "/PCGTool-MainShot.png",

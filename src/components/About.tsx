@@ -22,22 +22,22 @@ const About = () => {
                     />
                 </div>
                 <div className="flex flex-col w-full md:w-1/2 text-background-b text-left space-y-6">
-                    <p className="text-base sm:text-lg md:text-xl font-semibold leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed">
                         I am a recent University of Staffordshire graduate with a first-class BSc (Hons) in Computer Games Development!
                     </p>
-                    <p className="text-base sm:text-lg md:text-xl font-semibold leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed">
                         I predominantly work in Unreal Engine using both C++ & Blueprints, but I also have experience with Unity, Python, as well as React & TypeScript (which I used to build this site!).
 
                     </p>
-                    <p className="text-base sm:text-lg md:text-xl font-semibold leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed">
                         I am currently a course lead for{" "}
-                        <a href="https://softwareacademy.co.uk" target="_blank" className="underline">
+                        <a href="https://softwareacademy.co.uk" target="_blank" className="underline hover:font-bold">
                             Software Academy UK
                         </a>
                          , the UK's leading, NCFE-accredited, online Games Development Academy, where I have taught close to 100 students since November 2024!
                     </p>
 
-                    <p className="text-base sm:text-lg md:text-xl font-semibold leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed">
                         I love designing and making things, but my main passion is games, whether that be creating or playing. When I'm not at my PC, you can either catch me at the gym or working on my car!
                     </p>
                 </div>

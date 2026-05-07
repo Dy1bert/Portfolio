@@ -40,7 +40,7 @@ export default function ProjectGalleryCarousel({ project }: ProjectCardProps) {
   );
 
   return (
-    <div className="w-full max-w-xl mx-auto">
+    <div className="w-full max-w-xl mx-auto overflow-clip">
       <Carousel className="w-full max-w-xl" setApi={setApi}>
         <CarouselContent>
           {project.Gallery.map((image) => (
@@ -59,7 +59,7 @@ export default function ProjectGalleryCarousel({ project }: ProjectCardProps) {
 
       <Carousel className="mt-4 w-full max-w-xl">
         <div className="mask-x-from-90%">
-          <CarouselContent className="my-1 flex">
+          <CarouselContent className="my-1 mx-3 flex">
             {project.Gallery.map((image, index) => (
               <CarouselItem
                 className={cn(
@@ -80,8 +80,8 @@ export default function ProjectGalleryCarousel({ project }: ProjectCardProps) {
             ))}
           </CarouselContent>
         </div>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="left-0 z-20"/>
+        <CarouselNext className="right-0 z-20"/>
       </Carousel>
     </div>
   );
