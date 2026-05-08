@@ -24,6 +24,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-a: var(--background-a);
   background-a-light: var(--background-a-light);

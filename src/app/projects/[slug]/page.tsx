@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import VideoPlayer from "@/components/VideoPlayer";
 import ProjectGalleryCarousel from "@/components/ProjectGalleryCarousel";
+import Link from "next/link";
 
 interface PageProps {
     params: Promise<{
@@ -22,7 +23,7 @@ export default async function ProjectPage({ params }: PageProps) {
     }
 
     return (
-        <main className="min-h-screen w-full flex flex-col items-center bg-background-a text-background-b px-6 py-16">
+        <main id={"project"} className="min-h-screen w-full flex flex-col items-center bg-background-a text-background-b px-6 py-16">
 
                 {/* Title */}
                 <h1 className="text-8xl corner-title mt-16">
@@ -106,6 +107,15 @@ export default async function ProjectPage({ params }: PageProps) {
                         <VideoPlayer VideoID={project.YTID}/>
                 </div>
 
+                {/* Screenshot Gallery */}
+                <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                <div className="mt-8 flex flex-col md:items-start items-center">
+                    <h2 className="text-2xl font-semibold mb-6">
+                        Gallery
+                    </h2>
+                    <ProjectGalleryCarousel project={project}/>
+                </div>
+
                 {/* Progression Phases */}
                 {project.ProgressionPhases && (
                     <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
@@ -127,17 +137,22 @@ export default async function ProjectPage({ params }: PageProps) {
                                         <img src={phase.Image.src} alt={phase.Image.alt} className="aspect-video object-cover"/>
                                     </div>
                                 )}
+                                {phase.YTID && (
+                                    <div className="mt-6 rounded-lg w-full justify-center flex">
+                                        <VideoPlayer VideoID={phase.YTID}/>
+                                    </div>
+                                )}
                             </li>
                         ))
                 )}
-
-                {/* Screenshot Gallery */}
                 <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
-                <div className="mt-8 flex flex-col md:items-start items-center">
-                    <h2 className="text-2xl font-semibold mb-6">
-                        Gallery
+                <div className="mt-8 flex flex-col justify-center items-center text-center">
+                    <Link href={"/projects/" + slug + "#project"}>
+                        <Image src={"/UI/Up_Arrow.png"} alt={"Up Arrow"} width={64} height={64}/>
+                    </Link>
+                    <h2 className="mt-2 font-light text-background-b">
+                        Go Back Up!
                     </h2>
-                        <ProjectGalleryCarousel project={project}/>
                 </div>
         </main>
     );

@@ -1,7 +1,5 @@
 ﻿import React from 'react';
 import ProjectShowcaseCarousel from "@/components/ProjectShowcaseCarousel";
-import Link from "next/link";
-import {Button} from "@/components/ui/button";
 
 const ProjectShowcase = () => {
     return (

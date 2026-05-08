@@ -2,6 +2,7 @@
     Title: string;
     Body: string;
     Image?: { src: string; alt: string };
+    YTID?: string;
 }
 
 export interface Project {
@@ -60,16 +61,34 @@ export const ProjectList: ProjectItem[] = [
         ProgressionPhases:[
             {
                 Title: "Section 1 - Ideation",
-                Body: "This is how the game was thought of.........",
+                Body: "Word Race started as a University project for a module titled 'Mobile Games Development'. I first iterated through several ideas, starting with a hangman style game, all the way to an idle clicker!" +
+                    " Eventually, I landed on bringing my favourite thing (outside of games), car, together with my favourite genre of mobile games, word games. I pitched it to my group and received very positive feedback.",
             },
             {
                 Title: "Section 2 - Planning",
-                Body: "This is how the game was planned.........",
+                Body: "Planning started with research into current games that I wanted to take inspiration from, including but not limited to: Wordscapes, Wordle, and Scrabble. I eventually decided that I wanted to focus more " +
+                    "on the car side of it, so I ended up on choosing a hangman-esque guessing system that takes lives for every incorrect guess. I then began the creation of my design documentation, alongside some early UI layouts.",
+                Image: {src: "/WordRace/WordRace_UIPlanning.jpg", alt: "WordRace UI Design"},
             },
             {
                 Title: "Section 3 - Prototyping",
+                Body: "When I got into engine, I started to use my plan in order to bring my idea to life. I created a basic menu navigation system as well as a system to pick random words from a data table asset. " +
+                    "This taught me a lot about the flow of UI and the difference in thought process that is required for Mobile games. At this point, the project was runnable exclusively through the in-built mobile emulation.",
+                YTID: "7CVoalzfxIc",
+            },
+            {
+                Title: "Section 4 - First Build",
+                Body: "After approximately 4 weeks of development, I had my first build running on an old Huawei.",
+                Image: { src: "/WordRace/WordRace_MediaSS.png", alt: "WordRace Media" },
+            },
+            {
+                Title: "Section 5 - Current State",
                 Body: "This is the first prototyping stage.........",
                 Image: { src: "/WordRace/WordRace_MediaSS.png", alt: "WordRace Media" },
+            },
+            {
+                Title: "Section 6 - More Development?",
+                Body: "This is the first prototyping stage.........",
             },
         ]
     },
