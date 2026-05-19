@@ -116,6 +116,26 @@ export default async function ProjectPage({ params }: PageProps) {
                     <ProjectGalleryCarousel project={project}/>
                 </div>
 
+                {/* Showcase Links */}
+                {project.Showcase && (
+                    <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                )}
+                {project.Showcase && (
+                    <div className="mt-8 flex flex-col max-w-3xl w-full md:items-start items-center">
+                        <h2 className="text-2xl font-semibold">
+                            Links
+                        </h2>
+                        <div className="mt-8 w-full flex flex-col max-w-3xl items-center">
+                            {project.Showcase.map((showcase, index) => (
+                                <a key={index} href={showcase.Link} target="_blank" rel="noopener noreferrer"
+                                   className="flex flex-row items-center hover:scale-110 transition-transform duration-300">
+                                    <img src={showcase.Icon} alt={showcase.Name} width={256} height={256}/>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
                 {/* Progression Phases */}
                 {project.ProgressionPhases && (
                     <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
@@ -131,10 +151,10 @@ export default async function ProjectPage({ params }: PageProps) {
                     project.ProgressionPhases.map((phase, index) => (
                             <li key={index} className="mt-8 flex flex-col w-full max-w-3xl md:items-start items-center">
                                 <h2 className="tracking-[0.2em] text-xs">{phase.Title}</h2>
-                                <p className="mt-3 ml-6 leading-relaxed">{phase.Body}</p>
+                                <p className="mt-3 ml-6 leading-relaxed whitespace-pre-line">{phase.Body}</p>
                                 {phase.Image && (
                                     <div className="mt-6 overflow-hidden rounded-lg w-full">
-                                        <img src={phase.Image.src} alt={phase.Image.alt} className="aspect-video object-cover"/>
+                                        <img src={phase.Image.src} alt={phase.Image.alt} className="aspect-auto object-cover"/>
                                     </div>
                                 )}
                                 {phase.YTID && (

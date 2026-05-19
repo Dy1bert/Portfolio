@@ -34,7 +34,19 @@ const About = () => {
                         <a href="https://softwareacademy.co.uk" target="_blank" className="underline hover:font-bold">
                             Software Academy UK
                         </a>
-                         , the UK's leading, NCFE-accredited, online Games Development Academy, where I have taught close to 100 students since November 2024!
+                         , the UK's leading, NCFE-accredited, online Games Development Academy, where I have taught close to 100 students since November 2024! I was even hand-selected to create content for{" "}
+                        <a href="https://www.instagram.com/alicodemakers/" target="_blank" className="underline hover:font-bold">
+                            AliCodeMakers
+                        </a>
+                        , which is an Instagram account affiliated with the academy that has over 75k followers!.
+                    </p>
+
+                    <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed">
+                        I am also a co-founder of a new indie games studio,{" "}
+                        <a href="https://underwatergames.dev" target="_blank" className="underline hover:font-bold">
+                            UnderWaterGames
+                        </a>
+                        ! We are currently building up our foundations, but we will soon be up and running; watch this space!
                     </p>
 
                     <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed">

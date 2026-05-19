@@ -1,6 +1,4 @@
-﻿{/* DEPRECATED PROJECT PAGE -- SEE SHOWCASE CAROUSEL */}
-
-import {ProjectList} from "@/app/ProjectList";
+﻿import {ProjectList} from "@/app/ProjectList";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectShowcaseCarousel from "@/components/ProjectShowcaseCarousel";
 import React from "react";
