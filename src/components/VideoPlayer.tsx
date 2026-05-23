@@ -2,6 +2,7 @@
 
 import React from 'react';
 import YouTube from "react-youtube";
+import {useScreenSize} from "@/hooks/useScreenSize";
 
 interface VideoPlayerProps {
     VideoID: string | undefined;
@@ -9,8 +10,15 @@ interface VideoPlayerProps {
 
 const VideoPlayer = ({VideoID}: VideoPlayerProps) => {
 
-    {" TODO - Find a way to make the size more dynamic? add size to props (little hardcoded) and turnary operator it? Or find a better way "};
-    const YTOptions = {height: "360", width: "640", playerVars: {autoplay: false, controls: true} };
+    const sizes = {
+        small: { height: '180', width: '320' },
+        medium: { height: '360', width: '640' },
+        large: { height: '540', width: '960' },
+    };
+
+    const FinalSize = sizes[useScreenSize()] ?? "medium";
+
+    const YTOptions = {height: FinalSize.height, width: FinalSize.width, playerVars: {autoplay: false, controls: true} };
 
     return (
             <YouTube videoId={VideoID} opts={YTOptions} />

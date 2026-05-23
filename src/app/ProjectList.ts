@@ -1,4 +1,4 @@
-﻿export type Progression = {
+﻿export type InfoSection = {
     Title: string;
     Body: string;
     Image?: { src: string; alt: string };
@@ -28,7 +28,7 @@ export interface Project {
 
     Showcase?: ShowcaseLocations[];
 
-    ProgressionPhases?: Progression[];
+    ProgressionPhases?: InfoSection[];
 }
 
 export interface GameProject extends Project {
@@ -38,6 +38,7 @@ export interface GameProject extends Project {
     Status: string;
     ReleaseDate?: string;
     Role: string;
+    Features?: InfoSection[];
 }
 
 export interface WebProject extends Project {
@@ -116,11 +117,11 @@ export const ProjectList: ProjectItem[] = [
             "give it my all! Development took less than 9 weeks total, from ideation to polish and submission.\n\nSource code available on request.",
         TeamSize: 25,
         YTID: "9BcFfeiQkx0",
-        ImgSrc: "/Floor54-TitleShot.png",
+        ImgSrc: "/Floor54/Floor54-TitleShot.png",
         Engine: "Unreal Engine 5",
         Date: "July 2025",
         Role: "Lead Programmer",
-        Gallery: ["/file.svg"],
+        Gallery: ["/UI/Up_Arrow.png"],
         Status: "Archived",
         ProgressionPhases: [
             {
@@ -145,17 +146,23 @@ export const ProjectList: ProjectItem[] = [
         ShortDescription: "Road builder tool in UE5 using PCG.",
         LongDescription: "A PCG tool for UE5, built in C++ with the PCG plugin for Unreal Engine. Create modular road systems with customisable props; just place down a spline! Built with designers in mind, the main purpose is to streamline the world-building process.",
         YTID: "UuTlaV8B75E",
-        ImgSrc: "/PCGTool-MainShot.png",
+        ImgSrc: "/PCG/PCGTool-MainShot.png",
         Engine: "Unreal Engine 5",
         Date: "December 2024",
         Role: "Solo Developer",
-        Gallery: ["/file.svg"],
+        Gallery: ["/UI/Up_Arrow.png"],
         Status: "Archived",
         Showcase: [
             {
                 Name: "GitHub",
-                Icon: "/GitHub_Logo.png",
+                Icon: "/UI/GitHub_Logo.png",
                 Link: "https://github.com/Dy1bert/PCG_Artefact",
+            }
+        ],
+        Features: [
+            {
+                Title: "Features",
+                Body: "Here is a feature...",
             }
         ]
     },
@@ -167,12 +174,12 @@ export const ProjectList: ProjectItem[] = [
         ShortDescription: "3D platformer set in a stylised forest using UE5.",
         LongDescription: "Twisted Trek is a 3D platformer set in a stylised forest environment. Unlock your inner explorer as you traverse the land brimming with engaging mechanics and challenging level design. Over the 8-week development cycle, the main " +
             "focus was rapid prototyping, something that I still personally hail as one of my strongest skills.",
-        YTID: "",
-        ImgSrc: "/TestBG.png",
+        YTID: "OeaUOSI9_lI",
+        ImgSrc: "/TwistedTrek/TwistedTrek_IGScreenShot1.png",
         Engine: "Unreal Engine 5",
         Date: "February 2025",
         Role: "Solo Developer",
-        Gallery: ["/file.svg"],
+        Gallery: ["/UI/Up_Arrow.png"],
         Status: "Archived",
     },
     {
@@ -182,12 +189,12 @@ export const ProjectList: ProjectItem[] = [
         Name: "VR Escape Room",
         ShortDescription: "An escape room demo for VR, built in UE5.",
         LongDescription: "This is another looooooooooooooooooooooooooooooooooooooongggg description",
-        YTID: "UuTlaV8B75E",
-        ImgSrc: "/PCGTool-MainShot.png",
+        YTID: "yBJtqFcVv4s",
+        ImgSrc: "/VREscapeRoom/VREscapeRoom_IGScreenShot1.jpg",
         Engine: "Unreal Engine 5",
         Date: "December 2024",
         Role: "Solo Developer",
-        Gallery: ["/file.svg"],
+        Gallery: ["/UI/Up_Arrow.png"],
         Status: "Archived",
     },
     {
@@ -197,11 +204,10 @@ export const ProjectList: ProjectItem[] = [
         Name: "Portfolio",
         ShortDescription: "This website!",
         LongDescription: "This is another looooooooooooooooooooooooooooooooooooooongggg description",
-        YTID: "",
-        ImgSrc: "/TestBG.png",
+        ImgSrc: "/Portfolio/Portfolio_Hero.png",
         Framework: "NextJS",
         Date: "May 2026",
-        Gallery: ["/file.svg"],
+        Gallery: ["/UI/Up_Arrow.png"],
         URL: "https://dy1bert.dev/",
     },
 ];

@@ -7,7 +7,7 @@ export default function Home() {
     return (
             <main className="flex flex-col min-h-full items-center px-16 py-16 bg-background-a">
                 <section className="min-w-screen h-[35vh] flex flex-col items-center justify-center text-center border-b border-foreground shadow-lg"
-                         style={{   backgroundImage: "url('/TestBG.png')",
+                         style={{   backgroundImage: "url('/HeroBG.png')",
                              backgroundRepeat: "no-repeat",
                              backgroundAttachment: "fixed",
                              backgroundSize: "cover",

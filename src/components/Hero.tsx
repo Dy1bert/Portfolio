@@ -15,7 +15,7 @@ const Hero = () => {
 
     return (
         <section className="w-full h-[87.5vh] flex flex-col items-center justify-center text-center border-b border-foreground shadow-lg"
-                 style={{   backgroundImage: "url('/TestBG.png')",
+                 style={{   backgroundImage: "url('UI/HeroBG.png')",
                             backgroundRepeat: "no-repeat",
                             backgroundAttachment: "fixed",
                             backgroundSize: "cover",

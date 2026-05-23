@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Contacts = [
     { href:"https://github.com/Dy1bert", type:"GitHub", iconref: "/Github_Logo.png" },
-    { href:"mailto::dylan.buchanan.003@gmail.com", type:"Email", iconref: "/Email_Logo.png" },
+    { href:"mailto::dylan.buchanan.003@gmail.com", type:"Email", iconref: "/UI/Email_Logo.png" },
     { href:"https://uk.linkedin.com/in/dylan-j-buchanan", type:"LinkedIn", iconref: "/LinkedIn_Logo.png" },
 ];
 

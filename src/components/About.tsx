@@ -15,7 +15,7 @@ const About = () => {
             <div className="flex flex-col md:flex-row mt-10 bg-background-a w-full max-w-6xl rounded-lg shadow-lg items-center gap-8 p-6 md:p-10">
                 <div className="relative w-full md:w-1/2 h-64 sm:h-80 md:h-[450px]">
                     <Image
-                        src="/GradPic.jpg"
+                        src="/UI/GradPic.jpg"
                         alt="me"
                         fill
                         className="rounded-md object-cover"

@@ -32,7 +32,6 @@ export default async function ProjectPage({ params }: PageProps) {
 
                 {/* Project Metadata -- General */}
                 <div className="flex flex-wrap gap-4 mt-8 text-sm text-gray-400">
-
                     {project.Date && (
                         <span className="bg-neutral-800 px-3 py-1 rounded-lg">
                             Development Started: {project.Date}
@@ -40,31 +39,26 @@ export default async function ProjectPage({ params }: PageProps) {
                     )}
 
                     {/* Project Metadata -- Games */}
-
                     {project.Type === "Game" && project.Status && (
                         <span className="bg-neutral-800 px-3 py-1 rounded-lg">
                             Status: {project.Status}
                         </span>
                     )}
-
                     {project.Type === "Game" && project.ReleaseDate && (
                         <span className="bg-neutral-800 px-3 py-1 rounded-lg">
                             Release Date: {project.ReleaseDate}
                         </span>
                     )}
-
                     {project.Type === "Game" && project.Engine && (
                         <span className="bg-neutral-800 px-3 py-1 rounded-lg">
                             Engine: {project.Engine}
                         </span>
                     )}
-
                     {project.Type === "Game" && project.Role && (
                         <span className="bg-neutral-800 px-3 py-1 rounded-lg">
                             Role: {project.Role}
                         </span>
                     )}
-
                     {project.Type === "Game" && project.TeamSize && (
                         <span className="bg-neutral-800 px-3 py-1 rounded-lg">
                             Team Size: {project.TeamSize}
@@ -72,7 +66,6 @@ export default async function ProjectPage({ params }: PageProps) {
                     )}
 
                     {/* Project Metadata -- Web */}
-
                     {project.Type === "Web" && project.Framework && (
                         <span className="bg-neutral-800 px-3 py-1 rounded-lg">
                             Framework: {project.Framework}
@@ -88,24 +81,28 @@ export default async function ProjectPage({ params }: PageProps) {
                         alt={project.Name}
                         width={500}
                         height={300}
-                        className="rounded-xl object-cover"
+                        className="rounded-xl object-cover shadow-xl shadow-black"
                         priority
                     />
                 </div>
 
                 {/* Description */}
-                <div className="mt-8 text-lg text-background-b leading-relaxed max-w-6xl w-full whitespace-pre-line">
+                <div className="mt-12 text-lg text-background-b leading-relaxed max-w-6xl w-full whitespace-pre-line">
                     {project.LongDescription}
                 </div>
 
                 {/* Video Section */}
-                <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
-                <div className="mt-8 flex flex-col md:items-start items-center">
-                    <h2 className="text-2xl font-semibold mb-6">
-                        Gameplay
-                    </h2>
-                        <VideoPlayer VideoID={project.YTID}/>
-                </div>
+                {project.YTID && (
+                    <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                )}
+                {project.YTID && (
+                    <div className="mt-8 flex flex-col md:items-start items-center">
+                        <h2 className="text-2xl font-semibold mb-6">
+                            Gameplay
+                        </h2>
+                            <VideoPlayer VideoID={project.YTID}/>
+                    </div>
+                )}
 
                 {/* Screenshot Gallery */}
                 <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
@@ -134,6 +131,36 @@ export default async function ProjectPage({ params }: PageProps) {
                             ))}
                         </div>
                     </div>
+                )}
+
+                {/* Feature Showcase */}
+                {project.Type === "Game" && project.Features && (
+                    <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                )}
+                {project.Type === "Game" && project.Features && (
+                    <div className="mt-8 flex flex-col max-w-3xl w-full md:items-start items-center">
+                        <h2 className="text-2xl font-semibold">
+                            Features & Technical Breakdown
+                        </h2>
+                    </div>
+                )}
+                {project.Type === "Game" && project.Features && (
+                    project.Features.map((feature, index) => (
+                        <li key={index} className="mt-8 flex flex-col w-full max-w-3xl md:items-start items-center">
+                            <h2 className="tracking-[0.2em] text-xs">{feature.Title}</h2>
+                            <p className="mt-3 ml-6 leading-relaxed whitespace-pre-line">{feature.Body}</p>
+                            {feature.Image && (
+                                <div className="mt-6 overflow-hidden rounded-lg w-full">
+                                    <img src={feature.Image.src} alt={feature.Image.alt} className="aspect-auto object-cover"/>
+                                </div>
+                            )}
+                            {feature.YTID && (
+                                <div className="mt-6 rounded-lg w-full justify-center flex">
+                                    <VideoPlayer VideoID={feature.YTID}/>
+                                </div>
+                            )}
+                        </li>
+                    ))
                 )}
 
                 {/* Progression Phases */}
@@ -165,6 +192,8 @@ export default async function ProjectPage({ params }: PageProps) {
                             </li>
                         ))
                 )}
+
+                {/* Return to top of page button */}
                 <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
                 <div className="mt-8 flex flex-col justify-center items-center text-center">
                     <Link href={"/projects/" + slug + "#project"}>
