@@ -24,7 +24,6 @@ export function useScreenSize() {
     useEffect(() => {
         const updateSize = () => {
             setScreenSize(getScreenSize());
-            console.log(getScreenSize());
         };
 
         updateSize();

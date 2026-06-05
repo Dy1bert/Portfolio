@@ -123,7 +123,7 @@ export const ProjectList: ProjectItem[] = [
         Role: "Lead Programmer",
         Gallery: ["/UI/Up_Arrow.png"],
         Status: "Archived",
-        ProgressionPhases: [
+        Features: [
             {
                 Title: "Personal Contributions",
                 Body: "Throughout the project, I created several mechanics for the project. See the video below for an isolated run-through." +
@@ -136,7 +136,7 @@ export const ProjectList: ProjectItem[] = [
                     "I had to make sure that every other developer had a task, knew how to complete the task, and then ensured that they all integrated seamlessly. I liaised with the other leads from the remaining disciplines to meet any and all targets and " +
                     "criteria required for our game to succeed. I thoroughly enjoyed this experience, and I would love to take on a similar challenge someday!",
             },
-        ]
+        ],
     },
     {
         Type: "Game",
@@ -161,8 +161,13 @@ export const ProjectList: ProjectItem[] = [
         ],
         Features: [
             {
-                Title: "Features",
-                Body: "Here is a feature...",
+                Title: "Feature Breakdown",
+                Body: "• Fully customisable road layouts using splines\n• All controlled through a single blueprint\n• Works with default UE landscape system\n• Modular parameters (Meshes, Foliage, Props)" +
+                    "\n• Complete with user guide\n• Full technical breakdown available upon request!",
+            },
+            {
+                Title: "Technical Overview",
+                Body: "The way that the road tool works, ",
             }
         ]
     },
