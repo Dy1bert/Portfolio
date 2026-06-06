@@ -4,14 +4,14 @@ import React from "react";
 import Image from "next/image";
 
 const Contacts = [
-    { href:"https://github.com/Dy1bert", type:"GitHub", iconref: "/Github_Logo.png" },
+    { href:"https://github.com/Dy1bert", type:"GitHub", iconref: "/UI/Github_Logo.png" },
     { href:"mailto::dylan.buchanan.003@gmail.com", type:"Email", iconref: "/UI/Email_Logo.png" },
-    { href:"https://uk.linkedin.com/in/dylan-j-buchanan", type:"LinkedIn", iconref: "/LinkedIn_Logo.png" },
+    { href:"https://uk.linkedin.com/in/dylan-j-buchanan", type:"LinkedIn", iconref: "/UI/LinkedIn_Logo.png" },
 ];
 
 const Contact = () => {
     return (
-        <section className="w-full h-[50vh] flex flex-col items-center bg-background-a text-center">
+        <section className="w-full h-full flex flex-col items-center bg-background-a text-center">
             <h1 className="mt-[5%] text-6xl font-bold text-background-b">
                 Contact Me!
             </h1>
@@ -19,7 +19,7 @@ const Contact = () => {
             <h1 className="mt-4 text-md text-background-b max-w-5xl">
                 Feel free to reach out to me via any of the links below!
             </h1>
-            <div className="flex gap-8 md:gap-32 mt-8 md:mt-24">
+            <div className="flex gap-8 md:gap-32 mt-8 md:mt-12 mb-8 md:mb-12">
                 {Contacts.map((contact, index) => (
                     <a
                         key={index}

@@ -5,7 +5,7 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-      <main className="w-full flex-col items-center justify-between bg-white dark:bg-black sm:items-start">
+      <main className="w-full flex-col items-center justify-between bg-white dark:bg-black sm:items-start min-h-screen h-full">
           <div id={"home"}>
               <Hero/>
           </div>

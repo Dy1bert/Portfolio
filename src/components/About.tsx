@@ -13,7 +13,7 @@ const About = () => {
                 Hi there 👋
             </h2>
             <div className="flex flex-col md:flex-row mt-10 bg-background-a w-full max-w-6xl rounded-lg shadow-lg items-center gap-8 p-6 md:p-10">
-                <div className="relative w-full md:w-1/2 h-64 sm:h-80 md:h-[450px]">
+                <div className="relative w-full md:w-1/2 h-64 sm:h-80 md:h-[400px] lg:h-[600px]">
                     <Image
                         src="/UI/GradPic.jpg"
                         alt="me"
@@ -22,26 +22,29 @@ const About = () => {
                     />
                 </div>
                 <div className="flex flex-col w-full md:w-1/2 text-background-b text-left space-y-6">
-                    <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed">
-                        I am a recent University of Staffordshire graduate with a first-class BSc (Hons) in Computer Games Development!
-                    </p>
-                    <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed">
+                    <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
+                        I am a recent University of Staffordshire graduate with a first-class BSc (Hons) in Computer Games Development.
                         I predominantly work in Unreal Engine using both C++ & Blueprints, but I also have experience with Unity, Python, as well as React & TypeScript (which I used to build this site!).
 
                     </p>
-                    <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed">
+                    <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
                         I am currently a course lead for{" "}
                         <a href="https://softwareacademy.co.uk" target="_blank" className="underline hover:font-bold">
                             Software Academy UK
                         </a>
-                         , the UK's leading, NCFE-accredited, online Games Development Academy, where I have taught close to 100 students since November 2024! I was even hand-selected to create content for{" "}
+                         , the UK's leading, NCFE-accredited, online Games Development Academy, where I have taught close to 100 students since November 2024!
+                        I have also created several Unreal Engine projects for the academy that are all under an NDA (feel free to reach out for further details).
+                    </p>
+
+                    <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
+                        I was hand-selected to create content for{" "}
                         <a href="https://www.instagram.com/alicodemakers/" target="_blank" className="underline hover:font-bold">
                             AliCodeMakers
                         </a>
                         , which is an Instagram account affiliated with the academy that has over 75k followers!.
                     </p>
 
-                    <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed">
+                    <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
                         I am also a co-founder of a new indie games studio,{" "}
                         <a href="https://underwatergames.dev" target="_blank" className="underline hover:font-bold">
                             UnderWaterGames
@@ -49,7 +52,7 @@ const About = () => {
                         ! We are currently building up our foundations, but we will soon be up and running; watch this space!
                     </p>
 
-                    <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed">
+                    <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
                         I love designing and making things, but my main passion is games, whether that be creating or playing. When I'm not at my PC, you can either catch me at the gym or working on my car!
                     </p>
                 </div>

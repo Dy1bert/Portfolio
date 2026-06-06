@@ -167,7 +167,16 @@ export const ProjectList: ProjectItem[] = [
             },
             {
                 Title: "Technical Overview",
-                Body: "The way that the road tool works, ",
+                Body: "Starting with the landscape tool, the user needs to place splines in the desired path for the road. The manager blueprint then generates the road and prop meshes along each spline point. Once a PCG volume has been applied, the manager blueprint assigns " +
+                    "the tree mesh/es to it. The PCG tool then reads the area around the spline, and generates a basic forest. It also adds roadside props using a global Z offset dependant on whether the curb is displayed or not. These 2 areas that the PCG volume utilises " +
+                    "are the only 'random' elements throughout the tool.",
+                YTID: "O6RDTR_qnIU"
+            },
+            {
+                Title: "Main Takeaways & Challenges",
+                Body: "For the most part, this tool does exactly what I had intended for and designed. It required me to dive deeper into the spline and landscape systems within the engine in order to create a tool that worked with them seamlessly. " +
+                    "The main challenges that I ran into for this project were mostly scope-related. I had originally severely over-estimated how much was possible using a tool that was brand new to me in 8 weeks. The main challenge that I would like to " +
+                    "try to tackle moving forward is to create the ability to have crossroads; whether that be with a separate intersection mesh, or using the junction system already built-in to the landscape tool. Currently, if 2 roads were to cross, the meshes just clash."
             }
         ]
     },
@@ -186,6 +195,47 @@ export const ProjectList: ProjectItem[] = [
         Role: "Solo Developer",
         Gallery: ["/UI/Up_Arrow.png"],
         Status: "Archived",
+        ProgressionPhases: [
+            {
+                Title: "Section 1 - Ideation",
+                Body: "Twisted Trek started out as a brain-storm of features that I wanted to develop. This very quickly turned into a list of features that you would typically see in a platformer. Due to this project " +
+                    "being created as part of a University module, my only requirements were that the project utilised rapid prototyping (exclusively in blueprint), and the end product was engaging. A platformer ticked both " +
+                    "of these boxes.",
+            },
+            {
+                Title: "Section 2 - Planning",
+                Body: "To design Twisted Trek, I needed to ensure that I had a clear plan heading into development. This meant that I needed to know exactly what I was going to create, and how I was going to it. " +
+                    "This meant created several UML diagrams and flow-charts alongside collecting several assets, all before placing a single blueprint node. This entire process took the best part of a week, and in relfection, " +
+                    "this was the best decision that I made throughout the entire duration of the project, as it ensured a smooth transition from planning to development.",
+            },
+            {
+                Title: "Section 3 - Designing",
+                Body: "The game design itself is fairly straight-forward as my main focus was on the prototyping instead of the level itself. The player spawns in at the start, and there a 3 main sections with their own challenges, " +
+                    "scaling with difficulty as you go through the level. The player can choose to collect keys to open different chests throughout the level, with the main aim being to complete the level faster that the best time.",
+            },
+            {
+                Title: "Section 4 - Prototype & Iteration",
+                Body: "Once in engine, I started by creating my 3D side-scroller character and the complimentary input system. The level pieces themselves took many forms, from moving platforms to lasers. The full list of features are above. " +
+                    "Over the course of the 6 total weeks of development, I had successfully managed to create a full and engaging platformer experience utilising my years of blueprinting experience. Overall, it was a success, but I did also run into a " +
+                    "few challenges along the way. The biggest lesson that I learnt from this project is that with less time for development, there needs to be a compromise with either the amount of content, " +
+                    "or the polish of the content that already exists. I thought that I could balance both, so ended up without either a wide variety of features, or any heavily polished features.",
+            },
+            {
+                Title: "Section 5 - Future Development?",
+                Body: "As it stands, I have no plans to further develop this project. This project helped me out a lot with the overall flow of creating a usable prototype under a deadline, but I have no " +
+                    "reason or motivation to build on the foundations.",
+            },
+        ],
+        Features: [
+            {
+                Title: "Level Features",
+                Body: "• Lifts\n• Chest/Key System\n• Lasers\n• Spikes\n• Coins\n• Cinematic Camera Transitions",
+            },
+            {
+                Title: "External Game Features",
+                Body: "• Save/Load System (High Score)\n• Fully Operational Settings Menu",
+            }
+        ]
     },
     {
         Type: "Game",
