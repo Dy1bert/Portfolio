@@ -246,7 +246,7 @@ export const ProjectList: ProjectItem[] = [
         LongDescription: "Designed and developed a VR car mechanic sandbox in Unreal Engine 5 to investigate the impact of inventory design on player immersion. The project implemented and compared two distinct inventory systems, an in-world metaphoric tool bench " +
             "and an abstract hand-mounted menu, and was used to conduct user testing as part of my dissertation research. Findings demonstrated that physically integrated inventory systems significantly improve immersion and player engagement in virtual reality environments.",
         YTID: "U9DXn0CxDuM",
-        ImgSrc: "/VREscapeRoom/VREscapeRoom_IGScreenShot1.jpg",
+        ImgSrc: "/Dissertation/FYP_GameSS2.png",
         Engine: "Unreal Engine 5",
         Date: "March 2025",
         Role: "Solo Developer",

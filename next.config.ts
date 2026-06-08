@@ -4,6 +4,7 @@ module.exports = {
     logging: {
         browserToTerminal: true,
     },
+    reactStrictMode: true,
 }
 
 const nextConfig: NextConfig = {
