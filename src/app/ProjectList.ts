@@ -24,7 +24,8 @@ export interface Project {
     LongDescription: string;
 
     Date: string;
-    Gallery: string[]
+    Gallery?: string[]
+    Status: string;
 
     Showcase?: ShowcaseLocations[];
 
@@ -35,7 +36,6 @@ export interface GameProject extends Project {
     Type: "Game";
     TeamSize?: number;
     Engine?: string;
-    Status: string;
     ReleaseDate?: string;
     Role: string;
     Features?: InfoSection[];
@@ -64,7 +64,7 @@ export const ProjectList: ProjectItem[] = [
         Engine: "Unreal Engine 5",
         Date: "July 2025",
         Role: "Solo Developer",
-        Gallery: ["/WordRace/WordRace-Logo.png", "/WordRace/WordRace_MediaSS.png"],
+        Gallery: ["/WordRace/WordRace-Logo.png", "/WordRace/WordRace_MediaSS.png", "/WordRace/WordRace_Gameplay1.png", "/WordRace/WordRace_Gameplay2.png"],
         ReleaseDate: "TBD",
         Status: "Prototype",
         ProgressionPhases:[
@@ -121,7 +121,7 @@ export const ProjectList: ProjectItem[] = [
         Engine: "Unreal Engine 5",
         Date: "July 2025",
         Role: "Lead Programmer",
-        Gallery: ["/UI/Up_Arrow.png"],
+        Gallery: ["/Floor54/Floor54_Gameplay1.png", "/Floor54/Floor54_Gameplay2.png", "/Floor54/Floor54_Gameplay3.png", "/Floor54/Floor54_Gameplay4.png", "/Floor54/Floor54_Menu.png"],
         Status: "Archived",
         Features: [
             {
@@ -150,7 +150,7 @@ export const ProjectList: ProjectItem[] = [
         Engine: "Unreal Engine 5",
         Date: "December 2024",
         Role: "Solo Developer",
-        Gallery: ["/UI/Up_Arrow.png"],
+        Gallery: ["/PCG/PCG_SS1.png", "/PCG/PCG_SS2.png", "/PCG/PCG_SS3.png", "/PCG/PCG_SS4.png", "/PCG/PCG_SS5.png", "/PCG/PCG_Settings.png"],
         Status: "Archived",
         Showcase: [
             {
@@ -193,7 +193,7 @@ export const ProjectList: ProjectItem[] = [
         Engine: "Unreal Engine 5",
         Date: "February 2025",
         Role: "Solo Developer",
-        Gallery: ["/UI/Up_Arrow.png"],
+        Gallery: ["/TwistedTrek/TwistedTrek_IGScreenShot1.png", "/TwistedTrek/TwistedTrek_IGScreenShot2.png", "/TwistedTrek/TwistedTrek_IGScreenShot3.png", "/TwistedTrek/TwistedTrek_IGScreenShot4.png"],
         Status: "Archived",
         ProgressionPhases: [
             {
@@ -240,17 +240,43 @@ export const ProjectList: ProjectItem[] = [
     {
         Type: "Game",
         ID: 4,
-        slug: "vr-escape-room",
-        Name: "VR Escape Room",
-        ShortDescription: "An escape room demo for VR, built in UE5.",
-        LongDescription: "This is another looooooooooooooooooooooooooooooooooooooongggg description",
-        YTID: "yBJtqFcVv4s",
+        slug: "vr-inventories-dissertation",
+        Name: "Dissertation",
+        ShortDescription: "'Comparison of Inventory Designs in Virtual Reality Games'",
+        LongDescription: "Designed and developed a VR car mechanic sandbox in Unreal Engine 5 to investigate the impact of inventory design on player immersion. The project implemented and compared two distinct inventory systems, an in-world metaphoric tool bench " +
+            "and an abstract hand-mounted menu, and was used to conduct user testing as part of my dissertation research. Findings demonstrated that physically integrated inventory systems significantly improve immersion and player engagement in virtual reality environments.",
+        YTID: "U9DXn0CxDuM",
         ImgSrc: "/VREscapeRoom/VREscapeRoom_IGScreenShot1.jpg",
         Engine: "Unreal Engine 5",
-        Date: "December 2024",
+        Date: "March 2025",
         Role: "Solo Developer",
-        Gallery: ["/UI/Up_Arrow.png"],
+        Gallery: ["/Dissertation/FYP_GameSS1.png", "/Dissertation/FYP_GameSS2.png", "/Dissertation/FYP_GameSS3.png", "/Dissertation/FYP_GameSS4.png", "/Dissertation/FYP_GameSS5.png"],
         Status: "Archived",
+        Features: [
+            {
+                Title: "Overview",
+                Body: "For my dissertation, I investigated how different inventory design philosophies affect player immersion in virtual reality games. To support the research, I independently designed and developed a VR car mechanic sandbox prototype in Unreal Engine 5, " +
+                    "featuring two fully functional inventory systems: a metaphoric, in-world tool bench and an abstract hand-mounted menu." +
+                    "\n\n" +
+                    "The project was created as a controlled testing environment where participants completed a series of maintenance tasks using both inventory systems. Through user testing and questionnaire-based analysis, I evaluated how each approach influenced " +
+                    "immersion, engagement, usability, and player preference. The findings showed a strong preference for the metaphoric design, highlighting the importance of natural interactions and physical world integration in VR experiences." +
+                    "\n\n" +
+                    "This project combined VR gameplay programming, interaction design, UI/UX research, user testing, and technical implementation, providing practical insight into how immersive interfaces can improve player experience in virtual reality applications.",
+            },
+            {
+                Title: "Technical Breakdown",
+                Body: "The project itself consisted of one main level that each participant would play twice. The main section of the game, the car repair, is mostly contained inside of a single blueprint. There are a total of 5 tasks:\n\n" +
+                    "1. Remove the wheels\n" +
+                    "2. Clean the windows\n" +
+                    "3. Empty oil pan\n" +
+                    "4. Refill oil level\n" +
+                    "5. Replace a faulty headlight\n\n" +
+                    "For the metaphoric system, which made use of physical tools, these tasks were heavily based on the physics system built into the VR template, as is the case for the majority of VR interactions within a game engine. For the character and some " +
+                    "enhanced template features, I made use of the VR Expansion Plugin (VRE), an open source plugin designed to enhance VR interactions and gameplay elements (https://vreue4.com).\n\n" +
+                    "For the abstract system, the interaction with the car was exactly the same, but to gain access to the tools, I created a VR interactable UI menu. This could be used with the thumbstick of the hand that the menu was opened on, or using a pointer " +
+                    "on the opposite hand.",
+            }
+        ]
     },
     {
         Type: "Web",
@@ -258,11 +284,42 @@ export const ProjectList: ProjectItem[] = [
         slug: "portfolio",
         Name: "Portfolio",
         ShortDescription: "This website!",
-        LongDescription: "This is another looooooooooooooooooooooooooooooooooooooongggg description",
+        LongDescription: "A necessity turned passion project. This portfolio website is my maiden voyage into the world of web-development and the React framework. Built with NextJS, I planned, designed, and iterated the website until I achieved what you see in front of you!" +
+            "\n\nSource code available on request!",
         ImgSrc: "/Portfolio/Portfolio_Hero.png",
         Framework: "NextJS",
-        Date: "May 2026",
-        Gallery: ["/UI/Up_Arrow.png"],
+        Date: "March 2026",
         URL: "https://dy1bert.dev/",
+        Status: "Active",
+        ProgressionPhases: [
+            {
+                Title: "Section 1 - Necessity",
+                Body: "Being a budding Game Dev, as is the case with the vast majority of creative fields, a portfolio is a must. Whether that be in the form of a simple list, an itch.io page, or a fully custom-built website. I had created several portfolios in the past, " +
+                    "mostly using templates and tools from websites such as Wix, and Netlify (who I am currently using to host this site!). As I graduated University and started getting serious about breaking into the industry, I realised that the free templates and " +
+                    "website builders just weren't going to cut it anymore. At heart, I am a creator; I love making things. So here we are, after a couple of months of solo research (and plenty of mistakes), I am the proud owner of my own bespoke portfolio website.",
+                Image: {src: "/Portfolio/CollegePortfolio_SS.png", alt: "Old College Portfolio"}
+            },
+            {
+                Title: "Section 2 - Design",
+                Body: "Once I had decided it was time to learn how to do this, I then took to the well of knowledge that is YouTube and searched 'how to create a website'. After going down that rabbit hole for a little while, I stumbled across the channel 'JavaScript Mastery'. " +
+                    "This was my first step in starting my journey as a web developer. As is the case with any good project, the next stage was to start to design the layouts and plan the content that I wanted on each page. For this, I used Figma to mock up a basic layout. " +
+                    "My main intention was to keep the website layout concise, with no confusing paths or unclear sections. Naturally, some aspects were adapted during development, but overall, the design was successful.",
+                Image: {src: "/Portfolio/FigmaPlan.png", alt: "Figma Plan"}
+            },
+            {
+                Title: "Section 3 - Learning & Making Mistakes",
+                Body: "As is the case when learning something new, the process didn't go 100% to plan, nor did it go anywhere near as smooth as I would've liked. I had to recreate the entire project once as I managed to break something in the dependencies whilst trying to " +
+                    "import a 'shadcn' component. There are also components and sections that I built at the start of the project that I would love to adapt with my new-found knowledge, but my priority is publishing the site before any minor tweaks. The experience has been " +
+                    "far from doom and gloom though! I have managed to go from zero JavaScript and web development knowledge, to creating a usable, clean, and effective personal portfolio. I have been able to implement all of the features that I wanted. Up to this point, " +
+                    "I have used:\n" +
+                    "\n" +
+                    "• NextJS -> React (TypeScript, HTML, CSS with Tailwind)\n• Figma\n• shadcn\n• JetBrains WebStorm\n• GitHub",
+            },
+            {
+                Title: "Section 4 - What Now?",
+                Body: "As it stands, the website is finished in terms of content and layout. I am pleased with the end result, and the things that I have learnt over the time that I have been developing this website. Of course, as I evolve, there will " +
+                    "be more projects to add/change. Potentially, in the future, I may either overhaul, or re-create the website.",
+            },
+        ]
     },
 ];

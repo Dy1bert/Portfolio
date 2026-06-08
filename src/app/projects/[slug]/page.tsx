@@ -37,13 +37,13 @@ export default async function ProjectPage({ params }: PageProps) {
                             Development Started: {project.Date}
                         </span>
                     )}
-
-                    {/* Project Metadata -- Games */}
-                    {project.Type === "Game" && project.Status && (
+                    {project.Status && (
                         <span className="bg-neutral-800 px-3 py-1 rounded-lg">
                             Status: {project.Status}
                         </span>
                     )}
+
+                    {/* Project Metadata -- Games */}
                     {project.Type === "Game" && project.ReleaseDate && (
                         <span className="bg-neutral-800 px-3 py-1 rounded-lg">
                             Release Date: {project.ReleaseDate}
@@ -91,6 +91,14 @@ export default async function ProjectPage({ params }: PageProps) {
                     {project.LongDescription}
                 </div>
 
+                {project.Type === "Web" && project.URL && (
+                    <div className="mt-8 flex flex-col max-w-3xl w-full items-center">
+                        <a href={project.URL} target="_blank" className="text-2xl font-semibold underline hover:font-bold">
+                            LINK
+                        </a>
+                    </div>
+                )}
+
                 {/* Video Section */}
                 {project.YTID && (
                     <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
@@ -105,13 +113,17 @@ export default async function ProjectPage({ params }: PageProps) {
                 )}
 
                 {/* Screenshot Gallery */}
-                <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
-                <div className="mt-8 flex flex-col md:items-start items-center">
-                    <h2 className="text-2xl font-semibold mb-6">
-                        Gallery
-                    </h2>
-                    <ProjectGalleryCarousel project={project}/>
-                </div>
+                {project.Gallery &&
+                    <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                }
+                {project.Gallery &&
+                    <div className="mt-8 flex flex-col md:items-start items-center">
+                        <h2 className="text-2xl font-semibold mb-6">
+                            Gallery
+                        </h2>
+                        <ProjectGalleryCarousel project={project}/>
+                    </div>
+                }
 
                 {/* Showcase Links */}
                 {project.Showcase && (
@@ -180,7 +192,7 @@ export default async function ProjectPage({ params }: PageProps) {
                                 <h2 className="tracking-[0.2em] text-xs">{phase.Title}</h2>
                                 <p className="mt-3 ml-6 leading-relaxed whitespace-pre-line">{phase.Body}</p>
                                 {phase.Image && (
-                                    <div className="mt-6 overflow-hidden rounded-lg w-full">
+                                    <div className="mt-6 overflow-hidden rounded-lg w-full justify-center flex">
                                         <img src={phase.Image.src} alt={phase.Image.alt} className="aspect-auto object-cover"/>
                                     </div>
                                 )}
