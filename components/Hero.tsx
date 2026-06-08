@@ -16,9 +16,9 @@ const Hero = () => {
     return (
         <section className="w-full h-[87.5vh] flex flex-col items-center justify-center text-center border-b border-foreground shadow-lg"
                  style={{   backgroundImage: "url('UI/HeroBG.png')",
-                            backgroundRepeat: "no-repeat",
+                            backgroundRepeat: "repeat",
                             backgroundAttachment: "fixed",
-                            backgroundSize: "auto",
+                            backgroundSize: "contain",
                             backgroundPosition: "center"}}>
             <div className="bg-background-a rounded-2xl p-6 md:p-10 md:px-24 border-4">
                 <h1 className="text-7xl font-bold text-white md:text-9xl">
