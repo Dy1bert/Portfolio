@@ -18,7 +18,7 @@ const Hero = () => {
                  style={{   backgroundImage: "url('UI/HeroBG.png')",
                             backgroundRepeat: "no-repeat",
                             backgroundAttachment: "fixed",
-                            backgroundSize: "cover",
+                            backgroundSize: "auto",
                             backgroundPosition: "center"}}>
             <div className="bg-background-a rounded-2xl p-6 md:p-10 md:px-24 border-4">
                 <h1 className="text-7xl font-bold text-white md:text-9xl">

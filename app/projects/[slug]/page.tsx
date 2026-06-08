@@ -26,7 +26,7 @@ export default async function ProjectPage({ params }: PageProps) {
         <main id={"project"} className="min-h-screen w-full flex flex-col items-center bg-background-a text-background-b px-6 py-16">
 
                 {/* Title */}
-                <h1 className="text-8xl corner-title mt-16">
+                <h1 className="text-4xl md:text-8xl corner-title mt-16">
                     {project.Name}
                 </h1>
 

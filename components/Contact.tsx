@@ -28,7 +28,7 @@ const Contact = () => {
                         rel="noopener noreferrer"
                         className="flex flex-col items-center hover:scale-110 transition-transform duration-300"
                     >
-                        <div className="w-32 h-32 md:w-40 md:h-40 relative">
+                        <div className="w-20 h-20 md:w-40 md:h-40 relative">
                             <Image
                                 src={contact.iconref}
                                 alt={contact.type}

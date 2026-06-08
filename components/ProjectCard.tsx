@@ -23,7 +23,7 @@ const ProjectCard = ({ project, isFocused }: ProjectCardProps) => {
                     <h1 className={"text-background-a line-clamp-2" + (isFocused ? "xl:text-5xl md:text-4xl text-3xl font-extrabold" : "xl:text-3xl md:text-xl text-lg font-medium")}>
                         {project.Name}
                     </h1>
-                    <p className="mt-2 text-background-a text-sm xl:text-lg md:flex hidden">
+                    <p className="mt-2 text-background-a text-sm xl:text-lg">
                         {project.ShortDescription}
                     </p>
                 </div>
