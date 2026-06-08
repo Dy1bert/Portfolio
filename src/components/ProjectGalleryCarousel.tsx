@@ -43,7 +43,7 @@ export default function ProjectGalleryCarousel({ project }: ProjectCardProps) {
     <div className="w-full max-w-xl mx-auto overflow-clip">
       <Carousel className="w-full max-w-xl" setApi={setApi}>
         <CarouselContent>
-          {project.Gallery.map((image) => (
+          {project.Gallery && project.Gallery.map((image) => (
             <CarouselItem key={image}>
               <div className="w-full aspect-video flex justify-center rounded-xl">
                 <img
@@ -60,7 +60,7 @@ export default function ProjectGalleryCarousel({ project }: ProjectCardProps) {
       <Carousel className="mt-4 w-full max-w-xl">
         <div className="mask-x-from-90%">
           <CarouselContent className="my-1 mx-3 flex">
-            {project.Gallery.map((image, index) => (
+            {project.Gallery && project.Gallery.map((image, index) => (
               <CarouselItem
                 className={cn(
                   "basis-1/4 cursor-pointer transition-opacity",
