@@ -11,12 +11,12 @@ const Contacts = [
 
 const Contact = () => {
     return (
-        <section className="w-full h-full flex flex-col items-center bg-background-a text-center">
-            <h1 className="mt-[5%] text-6xl font-bold text-background-b">
+        <section className="w-full h-full flex flex-col items-center bg-background-b text-center">
+            <h1 className="mt-[2%] text-6xl font-bold text-background-a">
                 Contact Me!
             </h1>
 
-            <h1 className="mt-4 text-md text-background-b max-w-5xl">
+            <h1 className="mt-4 text-md text-background-a max-w-5xl">
                 Feel free to reach out to me via any of the links below!
             </h1>
             <div className="flex gap-8 md:gap-32 mt-8 md:mt-12 mb-8 md:mb-12">

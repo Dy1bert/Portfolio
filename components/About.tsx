@@ -5,14 +5,14 @@ import Image from "next/image";
 
 const About = () => {
     return (
-        <section className="w-full p-20 flex flex-col items-center text-center bg-background-b">
+        <section className="w-full p-6 md:p-20 flex flex-col items-center text-center bg-background-b">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-background-a">
                 About Me!
             </h1>
             <h2 className="mt-4 text-sm sm:text-base text-background-a max-w-2xl md:max-w-5xl">
                 Hi there 👋
             </h2>
-            <div className="flex flex-col md:flex-row mt-10 bg-background-a w-full max-w-6xl rounded-lg shadow-lg items-center gap-8 p-6 md:p-10">
+            <div className="flex flex-col md:flex-row mt-6 md:mt-10 bg-background-a w-full md:max-w-7xl rounded-lg shadow-lg items-center gap-8 p-6 md:p-10">
                 <div className="relative w-full md:w-1/2 h-64 sm:h-80 md:h-[400px] lg:h-[600px]">
                     <Image
                         src="/UI/GradPic.jpg"
@@ -34,14 +34,6 @@ const About = () => {
                         </a>
                          , the UK's leading, NCFE-accredited, online Games Development Academy, where I have taught close to 100 students since November 2024!
                         I have also created several Unreal Engine projects for the academy that are all under an NDA (feel free to reach out for further details).
-                    </p>
-
-                    <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
-                        I was hand-selected to create content for{" "}
-                        <a href="https://www.instagram.com/alicodemakers/" target="_blank" className="underline hover:font-bold">
-                            AliCodeMakers
-                        </a>
-                        , which is an Instagram account affiliated with the academy that has over 75k followers!.
                     </p>
 
                     <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">

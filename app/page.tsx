@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import Experience from "@/components/Experience";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
           </div>
           <div id={"about"} className="scroll-mt-[50px]">
               <About/>
+          </div>
+          <div id={"experience"} className="scroll-mt-[50px]">
+              <Experience/>
           </div>
           <div id={"contact"} className="scroll-mt-[50px]">
               <Contact/>
