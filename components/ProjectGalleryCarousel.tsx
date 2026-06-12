@@ -10,7 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {Project} from "@/app/ProjectList";
+import {Project} from "@/Data/ProjectList";
 
 interface ProjectCardProps {
   project: Project;

@@ -1,4 +1,4 @@
-﻿import { ProjectList } from "@/app/ProjectList";
+﻿import { ProjectList } from "@/Data/ProjectList";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import VideoPlayer from "@/components/VideoPlayer";

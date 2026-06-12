@@ -1,4 +1,4 @@
-﻿import {ProjectList} from "@/app/ProjectList";
+﻿import {ProjectList} from "@/Data/ProjectList";
 import ProjectCard from "@/components/ProjectCard";
 import React from "react";
 

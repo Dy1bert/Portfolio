@@ -1,4 +1,4 @@
-﻿import {ExperienceItem} from "@/app/ExperienceList";
+﻿import {ExperienceItem} from "@/Data/ExperienceList";
 import React from "react";
 
 interface Props {
@@ -22,11 +22,8 @@ const ExperienceTitle = ({ Experience }: Props) => {
     else {
         return (
             <div className="flex flex-row">
-                <h2 className="text-base sm:text-lg md:text-xl font-bold leading-relaxed underline">
-                    {Experience.Title}
-                </h2>
                 <h2 className="text-base sm:text-lg md:text-xl font-bold leading-relaxed">
-                    &nbsp;{Experience.Duration}
+                    <u>{Experience.Title}</u>&nbsp;{Experience.Duration}
                 </h2>
             </div>
 

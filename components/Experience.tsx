@@ -1,10 +1,8 @@
 ﻿"use client";
 
 import React from "react";
-import {ExperienceList} from "@/app/ExperienceList";
+import {ExperienceList} from "@/Data/ExperienceList";
 import ExperienceTitle from "@/components/ExperienceTitle";
-
-const Experience = () => {
 
     const DownloadCV = () => {
         const downloadURL = "/CV.pdf";
@@ -16,6 +14,7 @@ const Experience = () => {
         document.body.removeChild(link);
     };
 
+export default function Experience () {
     return (
         <section className="w-full p-6 md:p-20 flex flex-col items-center text-center bg-background-a">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-background-b">
@@ -77,5 +76,3 @@ const Experience = () => {
 
     );
 };
-
-export default Experience;

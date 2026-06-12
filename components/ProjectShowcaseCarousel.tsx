@@ -10,24 +10,28 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {ProjectList} from "@/app/ProjectList";
+import {ProjectList} from "@/Data/ProjectList";
 import ProjectCard from "@/components/ProjectCard";
 
 export default function SlideScale() {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
 
-  React.useEffect(() => {
-    if (!api) {
-      return;
-    }
+    React.useEffect(() => {
+        if (!api) return;
 
-    setCurrent(api.selectedScrollSnap() + 1);
+        const onSelect = () => {
+            setCurrent(api.selectedScrollSnap() + 1);
+        };
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
+        onSelect();
+
+        api.on("select", onSelect);
+
+        return () => {
+            api.off("select", onSelect);
+        };
+    }, [api]);
 
   return (
     <div className="relative max-w-[80vw] overflow-y-visible overflow-x-clip">
