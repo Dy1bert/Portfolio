@@ -23,29 +23,30 @@ const About = () => {
                 </div>
                 <div className="flex flex-col w-full md:w-1/2 text-background-b text-left space-y-6">
                     <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
-                        I am a recent University of Staffordshire graduate with a first-class BSc (Hons) in Computer Games Development.
-                        I predominantly work in Unreal Engine using both C++ & Blueprints, but I also have experience with Unity, Python, as well as React & TypeScript (which I used to build this site!).
+                        Hi, I&apos;m Dylan, a Graduate Games Developer and Course Lead specialising in Unreal Engine development using both C++ and Blueprints.
 
                     </p>
                     <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
-                        I am currently a course lead for{" "}
+                        I graduated from Staffordshire University with a First-Class BSc (Hons) in Computer Games Development and currently work as a Course Lead at&nbsp;
                         <a href="https://softwareacademy.co.uk" target="_blank" className="underline hover:font-bold">
                             Software Academy UK
                         </a>
-                         , the UK's leading, NCFE-accredited, online Games Development Academy, where I have taught close to 100 students since November 2024!
-                        I have also created several Unreal Engine projects for the academy that are all under an NDA (feel free to reach out for further details).
+                        . In this role, I design Unreal Engine projects, develop educational content, create video tutorials, and collaborate with a team of course
+                        leads to deliver NCFE-accredited game development courses.
                     </p>
 
                     <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
-                        I am also a co-founder of a new indie games studio,{" "}
-                        <a href="https://underwatergames.dev" target="_blank" className="underline hover:font-bold">
-                            UnderWaterGames
-                        </a>
-                        ! We are currently building up our foundations, but we will soon be up and running; watch this space!
+                        Alongside my professional work, I enjoy building personal projects that explore gameplay systems, UI development, and game architecture.
+                        My experience ranges from solo-developed mobile games to leading programming teams on indie collaborative projects.
                     </p>
 
                     <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
-                        I love designing and making things, but my main passion is games, whether that be creating or playing. When I'm not at my PC, you can either catch me at the gym or working on my car!
+                        Technologies I work with most frequently include Unreal Engine 5, C++, Blueprints, and Git. I also have experience with Unity & C#, Python, React, and TypeScript.
+                    </p>
+
+                    <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
+                        I&apos;m currently seeking opportunities to contribute to ambitious game projects as an Unreal Engine Developer, whether that be gameplay programming,
+                        UI development, or tools programming.
                     </p>
                 </div>
             </div>

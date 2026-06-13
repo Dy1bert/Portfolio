@@ -34,18 +34,22 @@ export default function Experience () {
                             .map((item, index) => (
                                     <div key={index}>
                                         <ExperienceTitle Experience={item}/>
+                                        <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed italic">
+                                            {item.Duration}
+                                        </p>
                                         <div className="ml-4">
-                                            {item.Body.map((text, index) => (
-                                                <p key={index} className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
-                                                    • {text}
+                                                <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
+                                                    • {item.Course}
                                                 </p>
-                                            ))}
+                                            <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed italic">
+                                                {item.Grade}
+                                            </p>
                                         </div>
                                     </div>
                             ))}
                     </div>
 
-                    <div className="border-1 border-background-a self-stretch"/>
+                    <div className="border border-background-a self-stretch"/>
 
                     <div className="flex flex-col w-full md:w-1/2 text-background-a text-left space-y-6 self-stretch">
                         <h1 className="text-2xl md:text-4xl font-bold leading-relaxed text-center">
@@ -56,16 +60,25 @@ export default function Experience () {
                             .map((item, index) => (
                                 <div key={index}>
                                     <ExperienceTitle Experience={item}/>
-                                    <div className="ml-4">
-                                        <p className="text-base sm:text-md md:text-lg font-semibold leading-relaxed italic">
-                                            {item.JobTitle}
-                                        </p>
-                                        {item.Body.map((text, index) => (
-                                            <p key={index} className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
-                                                • {text}
-                                            </p>
+                                        {item.Roles.map((role, index) => (
+                                            <div key={index} className="pb-4">
+                                                <p className="text-base sm:text-md md:text-lg font-bold leading-relaxed italic">
+                                                    {role.Role}
+                                                </p>
+                                                <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed italic">
+                                                    {role.Duration}
+                                                </p>
+                                                <div className="ml-4">
+                                                    {role.Points.map((point, index) => (
+                                                        <div key={index}>
+                                                            <p className="text-base sm:text-md md:text-lg font-medium leading-relaxed">
+                                                                • {point}
+                                                            </p>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
                                         ))}
-                                    </div>
                                 </div>
                             ))}
                     </div>

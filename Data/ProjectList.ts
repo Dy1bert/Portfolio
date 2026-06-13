@@ -53,6 +53,38 @@ export const ProjectList: ProjectItem[] = [
     {
         Type: "Game",
         ID: 0,
+        slug: "floor-54",
+        Name: "Floor 54",
+        ShortDescription: "Mech dungeon crawler built in UE5.",
+        LongDescription: "Floor 54 is a rogue-like inspired dungeon crawler built in UE5. Created with a team of 25 people, I led the programming team on a project that earned the top 3 spot out of nearly 30 projects that were submitted! Created during a 3rd year " +
+            "university module, Floor 54 remains one of the biggest learning experiences of my game development journey to date. Whether I was mentoring younger students, handling the GitHub repository, or building systems from the ground up, I was sure to " +
+            "give it my all! Development took less than 9 weeks total, from ideation to polish and submission.\n\nSource code available on request.",
+        TeamSize: 25,
+        YTID: "9BcFfeiQkx0",
+        ImgSrc: "/Floor54/Floor54-TitleShot.png",
+        Engine: "Unreal Engine 5",
+        Date: "July 2025",
+        Role: "Lead Programmer",
+        Gallery: ["/Floor54/Floor54_Gameplay1.png", "/Floor54/Floor54_Gameplay2.png", "/Floor54/Floor54_Gameplay3.png", "/Floor54/Floor54_Gameplay4.png", "/Floor54/Floor54_Menu.png"],
+        Status: "Archived",
+        Features: [
+            {
+                Title: "Personal Contributions",
+                Body: "Throughout the project, I created several mechanics for the project. See the video below for an isolated run-through." +
+                    "\n- Doors\n- Interactive Level building pieces\n- Key cards\n- Bespoke level system\n- UI integration\n- Enemy parent class\n- Enemy spawner (Deprecated)",
+                YTID:"ET5Gr_4zJiE",
+            },
+            {
+                Title: "Additional Responsibilities (Lead Programmer)",
+                Body: "Within the group, I had the most experience with Unreal Engine. This, alongside my willingness to succeed in any position, landed me as the lead programmer and tech guru for the group. This meant that alongside my personal contributions, " +
+                    "I had to make sure that every other developer had a task, knew how to complete the task, and then ensured that they all integrated seamlessly. I liaised with the other leads from the remaining disciplines to meet any and all targets and " +
+                    "criteria required for our game to succeed. I thoroughly enjoyed this experience, and I would love to take on a similar challenge someday!",
+            },
+        ],
+    },
+    {
+        Type: "Game",
+        ID: 1,
         slug: "word-race",
         Name: "Word Race",
         ShortDescription: "Mobile word game built in UE5.",
@@ -108,39 +140,48 @@ export const ProjectList: ProjectItem[] = [
     },
     {
         Type: "Game",
-        ID: 1,
-        slug: "floor-54",
-        Name: "Floor 54",
-        ShortDescription: "Mech dungeon crawler built in UE5.",
-        LongDescription: "Floor 54 is a rogue-like inspired dungeon crawler built in UE5. Created with a team of 25 people, I led the programming team on a project that earned the top 3 spot out of nearly 30 projects that were submitted! Created during a 3rd year " +
-            "university module, Floor 54 remains one of the biggest learning experiences of my game development journey to date. Whether I was mentoring younger students, handling the GitHub repository, or building systems from the ground up, I was sure to " +
-            "give it my all! Development took less than 9 weeks total, from ideation to polish and submission.\n\nSource code available on request.",
-        TeamSize: 25,
-        YTID: "9BcFfeiQkx0",
-        ImgSrc: "/Floor54/Floor54-TitleShot.png",
+        ID: 2,
+        slug: "vr-inventories-dissertation",
+        Name: "Dissertation",
+        ShortDescription: "'Comparison of Inventory Designs in Virtual Reality Games'",
+        LongDescription: "Designed and developed a VR car mechanic sandbox in Unreal Engine 5 to investigate the impact of inventory design on player immersion. The project implemented and compared two distinct inventory systems, an in-world metaphoric tool bench " +
+            "and an abstract hand-mounted menu, and was used to conduct user testing as part of my dissertation research. Findings demonstrated that physically integrated inventory systems significantly improve immersion and player engagement in virtual reality environments.",
+        YTID: "U9DXn0CxDuM",
+        ImgSrc: "/Dissertation/FYP_GameSS2.png",
         Engine: "Unreal Engine 5",
-        Date: "July 2025",
-        Role: "Lead Programmer",
-        Gallery: ["/Floor54/Floor54_Gameplay1.png", "/Floor54/Floor54_Gameplay2.png", "/Floor54/Floor54_Gameplay3.png", "/Floor54/Floor54_Gameplay4.png", "/Floor54/Floor54_Menu.png"],
+        Date: "March 2025",
+        Role: "Solo Developer",
+        Gallery: ["/Dissertation/FYP_GameSS1.png", "/Dissertation/FYP_GameSS2.png", "/Dissertation/FYP_GameSS3.png", "/Dissertation/FYP_GameSS4.png", "/Dissertation/FYP_GameSS5.png"],
         Status: "Archived",
         Features: [
             {
-                Title: "Personal Contributions",
-                Body: "Throughout the project, I created several mechanics for the project. See the video below for an isolated run-through." +
-                    "\n- Doors\n- Interactive Level building pieces\n- Key cards\n- Bespoke level system\n- UI integration\n- Enemy parent class\n- Enemy spawner (Deprecated)",
-                YTID:"ET5Gr_4zJiE",
+                Title: "Overview",
+                Body: "For my dissertation, I investigated how different inventory design philosophies affect player immersion in virtual reality games. To support the research, I independently designed and developed a VR car mechanic sandbox prototype in Unreal Engine 5, " +
+                    "featuring two fully functional inventory systems: a metaphoric, in-world tool bench and an abstract hand-mounted menu." +
+                    "\n\n" +
+                    "The project was created as a controlled testing environment where participants completed a series of maintenance tasks using both inventory systems. Through user testing and questionnaire-based analysis, I evaluated how each approach influenced " +
+                    "immersion, engagement, usability, and player preference. The findings showed a strong preference for the metaphoric design, highlighting the importance of natural interactions and physical world integration in VR experiences." +
+                    "\n\n" +
+                    "This project combined VR gameplay programming, interaction design, UI/UX research, user testing, and technical implementation, providing practical insight into how immersive interfaces can improve player experience in virtual reality applications.",
             },
             {
-                Title: "Additional Responsibilities (Lead Programmer)",
-                Body: "Within the group, I had the most experience with Unreal Engine. This, alongside my willingness to succeed in any position, landed me as the lead programmer and tech guru for the group. This meant that alongside my personal contributions, " +
-                    "I had to make sure that every other developer had a task, knew how to complete the task, and then ensured that they all integrated seamlessly. I liaised with the other leads from the remaining disciplines to meet any and all targets and " +
-                    "criteria required for our game to succeed. I thoroughly enjoyed this experience, and I would love to take on a similar challenge someday!",
-            },
-        ],
+                Title: "Technical Breakdown",
+                Body: "The project itself consisted of one main level that each participant would play twice. The main section of the game, the car repair, is mostly contained inside of a single blueprint. There are a total of 5 tasks:\n\n" +
+                    "1. Remove the wheels\n" +
+                    "2. Clean the windows\n" +
+                    "3. Empty oil pan\n" +
+                    "4. Refill oil level\n" +
+                    "5. Replace a faulty headlight\n\n" +
+                    "For the metaphoric system, which made use of physical tools, these tasks were heavily based on the physics system built into the VR template, as is the case for the majority of VR interactions within a game engine. For the character and some " +
+                    "enhanced template features, I made use of the VR Expansion Plugin (VRE), an open source plugin designed to enhance VR interactions and gameplay elements (https://vreue4.com).\n\n" +
+                    "For the abstract system, the interaction with the car was exactly the same, but to gain access to the tools, I created a VR interactable UI menu. This could be used with the thumbstick of the hand that the menu was opened on, or using a pointer " +
+                    "on the opposite hand.",
+            }
+        ]
     },
     {
         Type: "Game",
-        ID: 2,
+        ID: 3,
         slug: "pcg-road-tool",
         Name: "PCG Road Tool",
         ShortDescription: "Road builder tool in UE5 using PCG.",
@@ -182,7 +223,7 @@ export const ProjectList: ProjectItem[] = [
     },
     {
         Type: "Game",
-        ID: 3,
+        ID: 4,
         slug: "twisted-trek",
         Name: "Twisted Trek",
         ShortDescription: "3D platformer set in a stylised forest using UE5.",
@@ -234,47 +275,6 @@ export const ProjectList: ProjectItem[] = [
             {
                 Title: "External Game Features",
                 Body: "• Save/Load System (High Score)\n• Fully Operational Settings Menu",
-            }
-        ]
-    },
-    {
-        Type: "Game",
-        ID: 4,
-        slug: "vr-inventories-dissertation",
-        Name: "Dissertation",
-        ShortDescription: "'Comparison of Inventory Designs in Virtual Reality Games'",
-        LongDescription: "Designed and developed a VR car mechanic sandbox in Unreal Engine 5 to investigate the impact of inventory design on player immersion. The project implemented and compared two distinct inventory systems, an in-world metaphoric tool bench " +
-            "and an abstract hand-mounted menu, and was used to conduct user testing as part of my dissertation research. Findings demonstrated that physically integrated inventory systems significantly improve immersion and player engagement in virtual reality environments.",
-        YTID: "U9DXn0CxDuM",
-        ImgSrc: "/Dissertation/FYP_GameSS2.png",
-        Engine: "Unreal Engine 5",
-        Date: "March 2025",
-        Role: "Solo Developer",
-        Gallery: ["/Dissertation/FYP_GameSS1.png", "/Dissertation/FYP_GameSS2.png", "/Dissertation/FYP_GameSS3.png", "/Dissertation/FYP_GameSS4.png", "/Dissertation/FYP_GameSS5.png"],
-        Status: "Archived",
-        Features: [
-            {
-                Title: "Overview",
-                Body: "For my dissertation, I investigated how different inventory design philosophies affect player immersion in virtual reality games. To support the research, I independently designed and developed a VR car mechanic sandbox prototype in Unreal Engine 5, " +
-                    "featuring two fully functional inventory systems: a metaphoric, in-world tool bench and an abstract hand-mounted menu." +
-                    "\n\n" +
-                    "The project was created as a controlled testing environment where participants completed a series of maintenance tasks using both inventory systems. Through user testing and questionnaire-based analysis, I evaluated how each approach influenced " +
-                    "immersion, engagement, usability, and player preference. The findings showed a strong preference for the metaphoric design, highlighting the importance of natural interactions and physical world integration in VR experiences." +
-                    "\n\n" +
-                    "This project combined VR gameplay programming, interaction design, UI/UX research, user testing, and technical implementation, providing practical insight into how immersive interfaces can improve player experience in virtual reality applications.",
-            },
-            {
-                Title: "Technical Breakdown",
-                Body: "The project itself consisted of one main level that each participant would play twice. The main section of the game, the car repair, is mostly contained inside of a single blueprint. There are a total of 5 tasks:\n\n" +
-                    "1. Remove the wheels\n" +
-                    "2. Clean the windows\n" +
-                    "3. Empty oil pan\n" +
-                    "4. Refill oil level\n" +
-                    "5. Replace a faulty headlight\n\n" +
-                    "For the metaphoric system, which made use of physical tools, these tasks were heavily based on the physics system built into the VR template, as is the case for the majority of VR interactions within a game engine. For the character and some " +
-                    "enhanced template features, I made use of the VR Expansion Plugin (VRE), an open source plugin designed to enhance VR interactions and gameplay elements (https://vreue4.com).\n\n" +
-                    "For the abstract system, the interaction with the car was exactly the same, but to gain access to the tools, I created a VR interactable UI menu. This could be used with the thumbstick of the hand that the menu was opened on, or using a pointer " +
-                    "on the opposite hand.",
             }
         ]
     },

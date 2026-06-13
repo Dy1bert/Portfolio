@@ -15,15 +15,14 @@ const ExperienceTitle = ({ Experience }: Props) => {
                 <a href={Experience.href} target="_blank">
                     &nbsp;🌐
                 </a>
-                &nbsp;{Experience.Duration}
             </h2>
         );
     }
     else {
         return (
             <div className="flex flex-row">
-                <h2 className="text-base sm:text-lg md:text-xl font-bold leading-relaxed">
-                    <u>{Experience.Title}</u>&nbsp;{Experience.Duration}
+                <h2 className="text-base sm:text-lg md:text-xl font-bold leading-relaxed underline">
+                    {Experience.Title}
                 </h2>
             </div>
 
