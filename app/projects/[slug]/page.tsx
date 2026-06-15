@@ -32,9 +32,9 @@ export default async function ProjectPage({ params }: PageProps) {
 
                 {/* Project Metadata -- General */}
                 <div className="flex flex-wrap gap-4 mt-8 text-sm text-gray-400">
-                    {project.Date && (
+                    {project.Duration && (
                         <span className="bg-neutral-800 px-3 py-1 rounded-lg">
-                            Development Started: {project.Date}
+                            Duration: {project.Duration}
                         </span>
                     )}
                     {project.Status && (
@@ -75,7 +75,7 @@ export default async function ProjectPage({ params }: PageProps) {
                 </div>
 
                 {/* Hero Image */}
-                <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full pt-8 flex flex-col items-center">
+                <div className="mt-8 border-t border-background-b/25 max-w-7xl w-full pt-8 flex flex-col items-center">
                     <Image
                         src={project.ImgSrc}
                         alt={project.Name}
@@ -87,7 +87,7 @@ export default async function ProjectPage({ params }: PageProps) {
                 </div>
 
                 {/* Description */}
-                <div className="mt-12 text-lg text-background-b leading-relaxed max-w-6xl w-full whitespace-pre-line">
+                <div className="mt-12 text-lg text-background-b leading-relaxed max-w-7xl w-full whitespace-pre-line">
                     {project.LongDescription}
                 </div>
 
@@ -101,7 +101,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
                 {/* Video Section */}
                 {project.YTID && (
-                    <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                    <div className="mt-8 border-t border-background-b/25 max-w-7xl w-full"/>
                 )}
                 {project.YTID && (
                     <div className="mt-8 flex flex-col md:items-start items-center">
@@ -112,22 +112,9 @@ export default async function ProjectPage({ params }: PageProps) {
                     </div>
                 )}
 
-                {/* Screenshot Gallery */}
-                {project.Gallery &&
-                    <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
-                }
-                {project.Gallery &&
-                    <div className="mt-8 flex flex-col md:items-start items-center">
-                        <h2 className="text-2xl font-semibold mb-6">
-                            Gallery
-                        </h2>
-                        <ProjectGalleryCarousel project={project}/>
-                    </div>
-                }
-
                 {/* Showcase Links */}
                 {project.Showcase && (
-                    <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                    <div className="mt-8 border-t border-background-b/25 max-w-7xl w-full"/>
                 )}
                 {project.Showcase && (
                     <div className="mt-8 flex flex-col max-w-3xl w-full md:items-start items-center">
@@ -147,10 +134,10 @@ export default async function ProjectPage({ params }: PageProps) {
 
                 {/* Feature Showcase */}
                 {project.Type === "Game" && project.Features && (
-                    <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                    <div className="mt-8 border-t border-background-b/25 max-w-7xl w-full"/>
                 )}
                 {project.Type === "Game" && project.Features && (
-                    <div className="mt-8 flex flex-col max-w-3xl w-full md:items-start items-center">
+                    <div className="mt-8 flex flex-col max-w-5xl w-full md:items-start items-center">
                         <h2 className="text-2xl font-semibold">
                             Features & Technical Breakdown
                         </h2>
@@ -158,7 +145,7 @@ export default async function ProjectPage({ params }: PageProps) {
                 )}
                 {project.Type === "Game" && project.Features && (
                     project.Features.map((feature, index) => (
-                        <li key={index} className="mt-8 flex flex-col w-full max-w-3xl md:items-start items-center">
+                        <li key={index} className="mt-8 flex flex-col w-full max-w-5xl md:items-start items-center">
                             <h2 className="tracking-[0.2em] text-xs">{feature.Title}</h2>
                             <p className="mt-3 ml-6 leading-relaxed whitespace-pre-line">{feature.Body}</p>
                             {feature.Image && (
@@ -177,10 +164,10 @@ export default async function ProjectPage({ params }: PageProps) {
 
                 {/* Progression Phases */}
                 {project.ProgressionPhases && (
-                    <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                    <div className="mt-8 border-t border-background-b/25 max-w-7xl w-full"/>
                 )}
                 {project.ProgressionPhases && (
-                    <div className="mt-8 flex flex-col max-w-3xl w-full md:items-start items-center">
+                    <div className="mt-8 flex flex-col max-w-5xl w-full md:items-start items-center">
                         <h2 className="text-2xl font-semibold">
                             Progression Phases
                         </h2>
@@ -188,7 +175,7 @@ export default async function ProjectPage({ params }: PageProps) {
                 )}
                 {project.ProgressionPhases && (
                     project.ProgressionPhases.map((phase, index) => (
-                            <li key={index} className="mt-8 flex flex-col w-full max-w-3xl md:items-start items-center">
+                            <li key={index} className="mt-8 flex flex-col w-full max-w-5xl md:items-start items-center">
                                 <h2 className="tracking-[0.2em] text-xs">{phase.Title}</h2>
                                 <p className="mt-3 ml-6 leading-relaxed whitespace-pre-line">{phase.Body}</p>
                                 {phase.Image && (
@@ -205,8 +192,21 @@ export default async function ProjectPage({ params }: PageProps) {
                         ))
                 )}
 
+                {/* Screenshot Gallery */}
+                {project.Gallery &&
+                    <div className="mt-8 border-t border-background-b/25 max-w-7xl w-full"/>
+                }
+                {project.Gallery &&
+                    <div className="mt-8 flex flex-col md:items-start items-center">
+                        <h2 className="text-2xl font-semibold mb-6">
+                            Gallery
+                        </h2>
+                        <ProjectGalleryCarousel project={project}/>
+                    </div>
+                }
+
                 {/* Return to top of page button */}
-                <div className="mt-8 border-t border-background-b/25 max-w-6xl w-full"/>
+                <div className="mt-8 border-t border-background-b/25 max-w-7xl w-full"/>
                 <div className="mt-8 flex flex-col justify-center items-center text-center">
                     <Link href={"/projects/" + slug + "#project"}>
                         <Image src={"/UI/Up_Arrow.png"} alt={"Up Arrow"} width={64} height={64}/>

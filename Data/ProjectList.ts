@@ -23,7 +23,7 @@ export interface Project {
     ShortDescription: string;
     LongDescription: string;
 
-    Date: string;
+    Duration: string;
     Gallery?: string[]
     Status: string;
 
@@ -56,29 +56,56 @@ export const ProjectList: ProjectItem[] = [
         slug: "floor-54",
         Name: "Floor 54",
         ShortDescription: "Mech dungeon crawler built in UE5.",
-        LongDescription: "Floor 54 is a rogue-like inspired dungeon crawler built in UE5. Created with a team of 25 people, I led the programming team on a project that earned the top 3 spot out of nearly 30 projects that were submitted! Created during a 3rd year " +
-            "university module, Floor 54 remains one of the biggest learning experiences of my game development journey to date. Whether I was mentoring younger students, handling the GitHub repository, or building systems from the ground up, I was sure to " +
-            "give it my all! Development took less than 9 weeks total, from ideation to polish and submission.\n\nSource code available on request.",
+        LongDescription: "Floor 54 is a roguelike-inspired dungeon crawler developed in Unreal Engine 5 by a team of 25 developers over a 9-week production cycle.\n\n" +
+        "As Lead Programmer, I coordinated programming efforts across the team while developing core gameplay systems, repository workflows, and level progression mechanics.",
         TeamSize: 25,
         YTID: "9BcFfeiQkx0",
         ImgSrc: "/Floor54/Floor54-TitleShot.png",
         Engine: "Unreal Engine 5",
-        Date: "July 2025",
+        Duration: "9 Weeks",
         Role: "Lead Programmer",
         Gallery: ["/Floor54/Floor54_Gameplay1.png", "/Floor54/Floor54_Gameplay2.png", "/Floor54/Floor54_Gameplay3.png", "/Floor54/Floor54_Gameplay4.png", "/Floor54/Floor54_Menu.png"],
         Status: "Archived",
         Features: [
             {
                 Title: "Personal Contributions",
-                Body: "Throughout the project, I created several mechanics for the project. See the video below for an isolated run-through." +
-                    "\n- Doors\n- Interactive Level building pieces\n- Key cards\n- Bespoke level system\n- UI integration\n- Enemy parent class\n- Enemy spawner (Deprecated)",
-                YTID:"ET5Gr_4zJiE",
+                Body: "~~ Gameplay Systems ~~\n" +
+                    "• Developed modular door and keycard systems using Blueprint inheritance.\n" +
+                    "• Implemented level progression systems controlling player advancement.\n" +
+                    "• Created interactive environmental gameplay objects.\n\n" +
+                    "~~ Enemy Architecture ~~\n" +
+                    "• Developed enemy base class architecture for shared functionality.\n" +
+                    "• Designed spawning systems for encounter management and balancing.\n\n" +
+                    "~~ UI Integration ~~\n" +
+                    "• Connected gameplay systems to UI feedback and progression indicators.",
             },
             {
-                Title: "Additional Responsibilities (Lead Programmer)",
-                Body: "Within the group, I had the most experience with Unreal Engine. This, alongside my willingness to succeed in any position, landed me as the lead programmer and tech guru for the group. This meant that alongside my personal contributions, " +
-                    "I had to make sure that every other developer had a task, knew how to complete the task, and then ensured that they all integrated seamlessly. I liaised with the other leads from the remaining disciplines to meet any and all targets and " +
-                    "criteria required for our game to succeed. I thoroughly enjoyed this experience, and I would love to take on a similar challenge someday!",
+                Title: "Additional Responsibilities as a Lead Programmer",
+                Body: "~~ Leadership/Team Coordination ~~\n" +
+                    "• Managed programming tasks across the development team.\n" +
+                    "• Coordinated integration of gameplay systems.\n" +
+                    "• Maintained the GitHub repository and source control workflows.\n" +
+                    "• Collaborated with design, art, and production leads.\n" +
+                    "• Mentored less experienced Unreal developers.",
+            },
+            {
+                Title: "Technical Challenges",
+                Body: "~~ Challenge: Creating Reusable C++ Base Classes ~~\n" +
+                    "One of the project's key technical goals was ensuring gameplay systems were modular and reusable, allowing designers to implement and iterate on content without requiring constant programmer support.\n\n" +
+                    "To achieve this, I developed a series of C++ base classes that established consistent functionality across gameplay objects through the use of events and interfaces. Variables intended for designer configuration were " +
+                    "exposed to Blueprint, reducing dependency on programmers during implementation and iteration. Each object archetype could be traced back to a common parent class, promoting standardisation, reducing duplicated logic, " +
+                    "and simplifying future expansion.\n\n" +
+                    "To further support implementation, I produced written documentation for newly developed systems, enabling designers and other programmers to integrate features independently and consistently.\n\n" +
+                    "~~ Challenge: Modular Gameplay Systems ~~\n" +
+                    "Gameplay assets needed to be reusable across multiple levels and scenarios. Not only that, but they needed to be easy enough to understand and use for when designers implemented them.\n\n" +
+                    "I created several modular base classes in C++, which were later used to implement the Blueprint systems for the doors, keycards, environmental assets, and level interactions. This allowed designers to rapidly create new " +
+                    "encounters without requiring programmer intervention.\n\n" +
+                    "~~ Challenge: Team Integration ~~\n" +
+                    "As my first main experience as a lead with multiple programmers working simultaneously, maintaining compatibility and efficiency between various gameplay systems became " +
+                    "increasingly difficult.\n\n" +
+                    "To tackle this, I established workflows for both GitHub and Microsoft Planner to help coordinate system integration. I oversaw this first-hand, ensuring features could be merged efficiently throughout development.\n\n",
+                YTID:"ET5Gr_4zJiE",
+
             },
         ],
     },
@@ -94,7 +121,7 @@ export const ProjectList: ProjectItem[] = [
         YTID: "tuZerEOtcpQ",
         ImgSrc: "/WordRace/WordRace-Logo.png",
         Engine: "Unreal Engine 5",
-        Date: "July 2025",
+        Duration: "12 Weeks",
         Role: "Solo Developer",
         Gallery: ["/WordRace/WordRace-Logo.png", "/WordRace/WordRace_MediaSS.png", "/WordRace/WordRace_Gameplay1.png", "/WordRace/WordRace_Gameplay2.png"],
         ReleaseDate: "TBD",
@@ -149,7 +176,7 @@ export const ProjectList: ProjectItem[] = [
         YTID: "U9DXn0CxDuM",
         ImgSrc: "/Dissertation/FYP_GameSS2.png",
         Engine: "Unreal Engine 5",
-        Date: "March 2025",
+        Duration: "20 Weeks",
         Role: "Solo Developer",
         Gallery: ["/Dissertation/FYP_GameSS1.png", "/Dissertation/FYP_GameSS2.png", "/Dissertation/FYP_GameSS3.png", "/Dissertation/FYP_GameSS4.png", "/Dissertation/FYP_GameSS5.png"],
         Status: "Archived",
@@ -189,7 +216,7 @@ export const ProjectList: ProjectItem[] = [
         YTID: "UuTlaV8B75E",
         ImgSrc: "/PCG/PCGTool-MainShot.png",
         Engine: "Unreal Engine 5",
-        Date: "December 2024",
+        Duration: "8 Weeks",
         Role: "Solo Developer",
         Gallery: ["/PCG/PCG_SS1.png", "/PCG/PCG_SS2.png", "/PCG/PCG_SS3.png", "/PCG/PCG_SS4.png", "/PCG/PCG_SS5.png", "/PCG/PCG_Settings.png"],
         Status: "Archived",
@@ -232,7 +259,7 @@ export const ProjectList: ProjectItem[] = [
         YTID: "OeaUOSI9_lI",
         ImgSrc: "/TwistedTrek/TwistedTrek_IGScreenShot1.png",
         Engine: "Unreal Engine 5",
-        Date: "February 2025",
+        Duration: "8 Weeks",
         Role: "Solo Developer",
         Gallery: ["/TwistedTrek/TwistedTrek_IGScreenShot1.png", "/TwistedTrek/TwistedTrek_IGScreenShot2.png", "/TwistedTrek/TwistedTrek_IGScreenShot3.png", "/TwistedTrek/TwistedTrek_IGScreenShot4.png"],
         Status: "Archived",
@@ -288,7 +315,7 @@ export const ProjectList: ProjectItem[] = [
             "\n\nSource code available on request!",
         ImgSrc: "/Portfolio/Portfolio_Hero.png",
         Framework: "NextJS",
-        Date: "March 2026",
+        Duration: "12 Weeks",
         URL: "https://dy1bert.dev/",
         Status: "Active",
         ProgressionPhases: [
