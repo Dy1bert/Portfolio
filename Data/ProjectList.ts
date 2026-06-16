@@ -38,6 +38,7 @@ export interface GameProject extends Project {
     Engine?: string;
     ReleaseDate?: string;
     Role: string;
+    Platform?: string;
     Features?: InfoSection[];
 }
 
@@ -64,6 +65,7 @@ export const ProjectList: ProjectItem[] = [
         Engine: "Unreal Engine 5",
         Duration: "9 Weeks",
         Role: "Lead Programmer",
+        Platform: "PC",
         Gallery: ["/Floor54/Floor54_Gameplay1.png", "/Floor54/Floor54_Gameplay2.png", "/Floor54/Floor54_Gameplay3.png", "/Floor54/Floor54_Gameplay4.png", "/Floor54/Floor54_Menu.png"],
         Status: "Archived",
         Features: [
@@ -104,9 +106,15 @@ export const ProjectList: ProjectItem[] = [
                     "As my first main experience as a lead with multiple programmers working simultaneously, maintaining compatibility and efficiency between various gameplay systems became " +
                     "increasingly difficult.\n\n" +
                     "To tackle this, I established workflows for both GitHub and Microsoft Planner to help coordinate system integration. I oversaw this first-hand, ensuring features could be merged efficiently throughout development.\n\n",
-                YTID:"ET5Gr_4zJiE",
-
             },
+            {
+                Title: "Results",
+                Body: "• Worked as a programming lead in a team of 25.\n" +
+                    "• Managed source control within the team.\n" +
+                    "• Developed several modular systems.\n" +
+                    "• Created in a 9-week development cycle.",
+                YTID:"ET5Gr_4zJiE",
+            }
         ],
     },
     {
@@ -115,54 +123,59 @@ export const ProjectList: ProjectItem[] = [
         slug: "word-race",
         Name: "Word Race",
         ShortDescription: "Mobile word game built in UE5.",
-        LongDescription: "Word Race is a prototype word game for mobile. Originally started as a University project, Word Race uses Unreal Engine 5 to combine the world of word games with that of motorsports. " +
-            "Build your dream garage and race your way to victory! Currently set up on Android exclusively, I am the sole developer of this project, and I hope to revisit this soon to make it available on the Play Store!" +
-            "\n\nNote: This project contains AI-generated 2D artwork in the logo!",
+        LongDescription: "Word Race is a mobile word game developed in Unreal Engine 5 for Android.\n\n" +
+            "As a solo developer, I designed and implemented all gameplay systems, UI, progression mechanics, monetisation integration, and mobile deployment workflows. The project combines traditional word-guessing gameplay with vehicle-themed " +
+            "progression, allowing players to unlock and expand their garage through successful gameplay.\n\n" +
+            "The project was initially developed using Blueprints before later undergoing a C++ refactor to improve maintainability, scalability, and performance.\n\n" +
+            "Note: This project contains AI-generated 2D artwork in the logo!",
         YTID: "tuZerEOtcpQ",
         ImgSrc: "/WordRace/WordRace-Logo.png",
         Engine: "Unreal Engine 5",
         Duration: "12 Weeks",
         Role: "Solo Developer",
+        Platform: "Mobile",
         Gallery: ["/WordRace/WordRace-Logo.png", "/WordRace/WordRace_MediaSS.png", "/WordRace/WordRace_Gameplay1.png", "/WordRace/WordRace_Gameplay2.png"],
         ReleaseDate: "TBD",
         Status: "Prototype",
-        ProgressionPhases:[
+        Features: [
             {
-                Title: "Section 1 - Ideation",
-                Body: "Word Race started as a University project for a module titled 'Mobile Games Development'. I first iterated through several ideas, starting with a hangman-style game, all the way to an idle clicker!" +
-                    " Eventually, I landed on bringing my favourite thing (outside of games), cars, together with my favourite genre of mobile games, word games. I pitched it to my group and received very positive feedback.",
+                Title: "Features",
+                Body: "~~ Gameplay Systems ~~\n" +
+                    "• Developed a data-driven word generation system using Unreal Data Tables in preparation for localisation.\n" +
+                    "• Implemented life, scoring, and resource management systems tied to gameplay progression.\n" +
+                    "• Created garage progression systems tied to gameplay performance.\n" +
+                    "• Developed an endless gameplay mode with milestone-based rewards to encourage replayability.\n" +
+                    "• Designed a thematic fuel-based energy system to support progression and session pacing.\n\n" +
+                    "~~ UI Systems ~~\n" +
+                    "• Developed mobile-centric UI and navigation systems.\n" +
+                    "• Developed a data-driven UI theming system using Unreal Engine Data Assets, allowing future seasonal events and visual updates without UI rewrites.\n" +
+                    "• Structured UI widgets using reusable parent classes and consistent hierarchy patterns to simplify future expansion.\n\n" +
+                    "~~ Android Compatibility ~~\n" +
+                    "• Implemented Android deployment and testing workflows.\n" +
+                    "• Integrated Google AdMob monetisation systems in preparation for production deployment."
             },
             {
-                Title: "Section 2 - Planning",
-                Body: "Planning started with research into current games that I wanted to take inspiration from, including but not limited to: Wordscapes, Wordle, and Scrabble. I eventually decided that I wanted to focus more " +
-                    "on the car side of it, so I ended up choosing a hangman-esque guessing system that takes lives for every incorrect guess. I then began the creation of my design documentation, alongside some early UI layouts.",
-                Image: {src: "/WordRace/WordRace_UIPlanning.jpg", alt: "WordRace UI Design"},
+                Title: "Technical Challenges",
+                Body: "~~ Challenge: Data-Driven Content ~~\n" +
+                    "Game depth and world quantity needed to be easily expandable, without requiring any game code modification.\n\n" +
+                    "To solve this, I made use of Unreal Engine's Data Tables. This allowed me to add new content in the structure that I had created, either manually or in bulk using an CSV file. The architecture was designed to support future expansion " +
+                    "through alternative data sources, including JSON-based content pipelines and online services to further remove reliability on in-engine changes.\n\n" +
+                    "~~ Challenge: Blueprint to C++ Migration ~~\n" +
+                    "The original prototype was developed almost entirely in blueprint, minus minor XML code to deal with Android storage permissions.\n\n" +
+                    "As the project grew, maintaining increasingly complex gameplay systems (especially if I were to pivot to some form of multiplayer in the near future) would become more difficult. To ensure that scalability and maintainability were " +
+                    "prioritised, I began migrating the core gameplay systems in C++. This allowed me to preserve existing functionality, while creating a more robust backend. This also had the added benefit of significantly improving my first hand " +
+                    "experience with the engine's relationship between C++ and Blueprint, and its hybrid workflow.\n\n" +
+                    "~~ Challenge: Mobile UI Design ~~\n" +
+                    "Unlike desktop games, mobile gameplay required a bigger focus and careful consideration when it came to user experience; specifically screen space and controls.\n\n" +
+                    "I iterated through several designs and layouts for the content on each page to create an interface that was equally as readable and responsive as it was intuitive and aesthetic. All of this remained true whilst still providing " +
+                    "an efficient vessel for the gameplay itself."
             },
             {
-                Title: "Section 3 - Prototyping",
-                Body: "When I got into the engine, I started to use my plan in order to bring my idea to life. I created a basic menu navigation system as well as a system to pick random words from a data table asset. " +
-                    "This taught me a lot about the flow of UI and the difference in the thought process that is required for Mobile games. At this point, the project was runnable exclusively through the built-in mobile emulation.",
-                YTID: "7CVoalzfxIc",
-            },
-            {
-                Title: "Section 4 - First Build",
-                Body: "After approximately 4 weeks of development, I had my first build running on an old Huawei. This version of the project had a start menu and a basic gameplay loop that allowed the user to pick a word length, " +
-                    "generate a random word from a data table, and then guess a letter. The foundations had been laid, and, from here, the pace really picked up.",
-                YTID: "Z_XHINFKv0s",
-            },
-            {
-                Title: "Section 5 - Current State",
-                Body: "As it stands, the game itself is in an early alpha build. I used this version of the game as my final submission during week 9 of development, then roughly 1 month after that for GradEx 2025, held at the University of Staffordshire. " +
-                    "During GradEx, Word Race was shortlisted as Top 5 in the Games Design & Development category! This game me the motivation to continue working on this post-graduation. To this day, Word Race has taken a back seat to some other exciting " +
-                    "projects with both Software Academy, and my own studio UnderWaterGames. The most recent developments are with the new backend that I am rebuilding in C++. Word Race was 99% blueprint at its inception, so with some time on my hands, I " +
-                    "managed to recreate (and improve) most of my original systems, which is where the game sits today!",
-                Image: { src: "/WordRace/WordRace_GradEx.png", alt: "GradEx Set Up" },
-            },
-            {
-                Title: "Section 6 - More Development?",
-                Body: "As mentioned, Word Race is currently undergoing a complete back-end overhaul into C++. It has been some time since this started, and a lot of that original motivation has vanished. I still intend for this to be my first publicly released game, " +
-                    "and if the stars align, before the end of the year (2026). My main goal is to implement peer-to-peer multiplayer to offset any server costs, but still make the game more favourable by including multiplayer features.",
-            },
+                Title: "Results",
+                Body: "• Demonstrated at GradEx 2025 (Staffordshire University).\n" +
+                    "• Successfully tested on Android devices.\n" +
+                    "• Currently undergoing a C++ backend refactor.",
+            }
         ]
     },
     {
@@ -172,37 +185,62 @@ export const ProjectList: ProjectItem[] = [
         Name: "Dissertation",
         ShortDescription: "'Comparison of Inventory Designs in Virtual Reality Games'",
         LongDescription: "Designed and developed a VR car mechanic sandbox in Unreal Engine 5 to investigate the impact of inventory design on player immersion. The project implemented and compared two distinct inventory systems, an in-world metaphoric tool bench " +
-            "and an abstract hand-mounted menu, and was used to conduct user testing as part of my dissertation research. Findings demonstrated that physically integrated inventory systems significantly improve immersion and player engagement in virtual reality environments.",
+            "and an abstract hand-mounted menu, and was used to conduct user testing as part of my dissertation research.\n\n" +
+            "Findings demonstrated that physically integrated inventory systems significantly improve immersion and user engagement within virtual reality environments.",
         YTID: "U9DXn0CxDuM",
         ImgSrc: "/Dissertation/FYP_GameSS2.png",
         Engine: "Unreal Engine 5",
         Duration: "20 Weeks",
         Role: "Solo Developer",
+        Platform: "VR",
         Gallery: ["/Dissertation/FYP_GameSS1.png", "/Dissertation/FYP_GameSS2.png", "/Dissertation/FYP_GameSS3.png", "/Dissertation/FYP_GameSS4.png", "/Dissertation/FYP_GameSS5.png"],
         Status: "Archived",
         Features: [
             {
-                Title: "Overview",
-                Body: "For my dissertation, I investigated how different inventory design philosophies affect player immersion in virtual reality games. To support the research, I independently designed and developed a VR car mechanic sandbox prototype in Unreal Engine 5, " +
-                    "featuring two fully functional inventory systems: a metaphoric, in-world tool bench and an abstract hand-mounted menu." +
-                    "\n\n" +
-                    "The project was created as a controlled testing environment where participants completed a series of maintenance tasks using both inventory systems. Through user testing and questionnaire-based analysis, I evaluated how each approach influenced " +
-                    "immersion, engagement, usability, and player preference. The findings showed a strong preference for the metaphoric design, highlighting the importance of natural interactions and physical world integration in VR experiences." +
-                    "\n\n" +
-                    "This project combined VR gameplay programming, interaction design, UI/UX research, user testing, and technical implementation, providing practical insight into how immersive interfaces can improve player experience in virtual reality applications.",
+                Title: "Gameplay Systems",
+                Body: "~~ VR Interactions ~~\n" +
+                    "• Developed two functioning inventory systems for comparative testing.\n" +
+                    "• Implemented object interaction, in-game tool handling, and task progression systems.\n" +
+                    "• Designed and implemented a complete VR car maintenance gameplay loop.\n\n" +
+                    "~~ Task Progression ~~\n" +
+                    "Participants completed a series of vehicle maintenance activities designed to require frequent tool usage:\n" +
+                    "• Wheel removal\n" +
+                    "• Window cleaning\n" +
+                    "• Oil drainage\n" +
+                    "• Oil replacement\n" +
+                    "• Headlight replacement\n" +
+                    "This task structure ensured both inventory systems were exercised repeatedly throughout testing.\n\n" +
+                    "~~ VRE Plugin ~~\n" +
+                    "To enhance VR interaction quality, I integrated the VR Expansion Plugin, extending the capabilities of " +
+                    "Unreal Engine's default VR template and improving object interaction fidelity.\n\n" +
+                    "~~ Inventory Implementation ~~\n" +
+                    "• Developed a base tool system to interact with the main car maintenance loop.\n" +
+                    "• Implemented both a UI-based, and physical inventory system that both made use of the tool system to keep testing fair."
             },
             {
-                Title: "Technical Breakdown",
-                Body: "The project itself consisted of one main level that each participant would play twice. The main section of the game, the car repair, is mostly contained inside of a single blueprint. There are a total of 5 tasks:\n\n" +
-                    "1. Remove the wheels\n" +
-                    "2. Clean the windows\n" +
-                    "3. Empty oil pan\n" +
-                    "4. Refill oil level\n" +
-                    "5. Replace a faulty headlight\n\n" +
-                    "For the metaphoric system, which made use of physical tools, these tasks were heavily based on the physics system built into the VR template, as is the case for the majority of VR interactions within a game engine. For the character and some " +
-                    "enhanced template features, I made use of the VR Expansion Plugin (VRE), an open source plugin designed to enhance VR interactions and gameplay elements (https://vreue4.com).\n\n" +
-                    "For the abstract system, the interaction with the car was exactly the same, but to gain access to the tools, I created a VR interactable UI menu. This could be used with the thumbstick of the hand that the menu was opened on, or using a pointer " +
-                    "on the opposite hand.",
+                Title: "Technical Challenges",
+                Body: "~~ Challenge: Fairness ~~\n" +
+                    "The project required two fundamentally different inventory systems to provide identical functionality, while maintaining their distinct interaction methods.\n\n" +
+                    "To ensure a fair comparison, both systems were designed around the same gameplay tasks and toolset, allowing differences in player experiences to be attributed to the inventory design instead of gameplay variation.\n\n" +
+                    "~~ Challenge: VR Interaction Design ~~\n" +
+                    "Unlike traditional games, VR interactions require players to physically manipulate objects within a three-dimensional space, generally using some form of physics.\n\n" +
+                    "To support this, I implemented physics-based interactions and leveraged the VR Expansion Plugin to improve object handling, player comfort, and interaction reliability throughout the experience.\n\n" +
+                    "~~ Challenge: Gameplay Consistency ~~\n" +
+                    "Due to the application being used for academic research, every participant needed to experience the same tasks under the same conditions.\n\n" +
+                    "I designed the gameplay loop as a controlled sandbox environment, ensuring all participants completed identical maintenance tasks regardless of which inventory system was being evaluated."
+            },
+            {
+                Title: "User Testing and Research",
+                Body: "• Designed a controlled testing environment for participant studies.\n" +
+                    "• Collected and analysed questionnaire data from user testing sessions.\n" +
+                    "• Evaluated immersion, usability, and player preference across both inventory systems.",
+            },
+            {
+                Title: "Results",
+                Body: "• Successfully developed and evaluated two complete VR inventory systems.\n" +
+                    "• Conducted testing and questionnaire-based analysis.\n" +
+                    "• Results indicated a strong preference for diegetic, physically integrated inventory design.\n" +
+                    "• Achieved a First-Class grade as my undergraduate dissertation project."
             }
         ]
     },
@@ -261,6 +299,7 @@ export const ProjectList: ProjectItem[] = [
         Engine: "Unreal Engine 5",
         Duration: "8 Weeks",
         Role: "Solo Developer",
+        Platform: "PC",
         Gallery: ["/TwistedTrek/TwistedTrek_IGScreenShot1.png", "/TwistedTrek/TwistedTrek_IGScreenShot2.png", "/TwistedTrek/TwistedTrek_IGScreenShot3.png", "/TwistedTrek/TwistedTrek_IGScreenShot4.png"],
         Status: "Archived",
         ProgressionPhases: [

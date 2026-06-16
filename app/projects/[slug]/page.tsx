@@ -64,6 +64,11 @@ export default async function ProjectPage({ params }: PageProps) {
                             Team Size: {project.TeamSize}
                         </span>
                     )}
+                    {project.Type === "Game" && project.Platform && (
+                        <span className="bg-neutral-800 px-3 py-1 rounded-lg">
+                            Platform: {project.Platform}
+                        </span>
+                    )}
 
                     {/* Project Metadata -- Web */}
                     {project.Type === "Web" && project.Framework && (
