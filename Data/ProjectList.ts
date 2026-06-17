@@ -186,7 +186,7 @@ export const ProjectList: ProjectItem[] = [
         ShortDescription: "'Comparison of Inventory Designs in Virtual Reality Games'",
         LongDescription: "Designed and developed a VR car mechanic sandbox in Unreal Engine 5 to investigate the impact of inventory design on player immersion. The project implemented and compared two distinct inventory systems, an in-world metaphoric tool bench " +
             "and an abstract hand-mounted menu, and was used to conduct user testing as part of my dissertation research.\n\n" +
-            "Findings demonstrated that physically integrated inventory systems significantly improve immersion and user engagement within virtual reality environments.",
+            "Findings demonstrated that physically integrated inventory systems significantly improved immersion and user engagement within virtual reality environments.",
         YTID: "U9DXn0CxDuM",
         ImgSrc: "/Dissertation/FYP_GameSS2.png",
         Engine: "Unreal Engine 5",
@@ -199,7 +199,7 @@ export const ProjectList: ProjectItem[] = [
             {
                 Title: "Gameplay Systems",
                 Body: "~~ VR Interactions ~~\n" +
-                    "• Developed two functioning inventory systems for comparative testing.\n" +
+                    "• Developed two fully functioning inventory systems for comparative testing.\n" +
                     "• Implemented object interaction, in-game tool handling, and task progression systems.\n" +
                     "• Designed and implemented a complete VR car maintenance gameplay loop.\n\n" +
                     "~~ Task Progression ~~\n" +
@@ -208,24 +208,24 @@ export const ProjectList: ProjectItem[] = [
                     "• Window cleaning\n" +
                     "• Oil drainage\n" +
                     "• Oil replacement\n" +
-                    "• Headlight replacement\n" +
+                    "• Headlight replacement\n\n" +
                     "This task structure ensured both inventory systems were exercised repeatedly throughout testing.\n\n" +
                     "~~ VRE Plugin ~~\n" +
                     "To enhance VR interaction quality, I integrated the VR Expansion Plugin, extending the capabilities of " +
                     "Unreal Engine's default VR template and improving object interaction fidelity.\n\n" +
                     "~~ Inventory Implementation ~~\n" +
                     "• Developed a base tool system to interact with the main car maintenance loop.\n" +
-                    "• Implemented both a UI-based, and physical inventory system that both made use of the tool system to keep testing fair."
+                    "• Implemented both a UI-based, and physical inventory system, each built around the same underlying tool framework to ensure consistent testing conditions."
             },
             {
                 Title: "Technical Challenges",
-                Body: "~~ Challenge: Fairness ~~\n" +
+                Body: "~~ Challenge: Experimental Consistency ~~\n" +
                     "The project required two fundamentally different inventory systems to provide identical functionality, while maintaining their distinct interaction methods.\n\n" +
                     "To ensure a fair comparison, both systems were designed around the same gameplay tasks and toolset, allowing differences in player experiences to be attributed to the inventory design instead of gameplay variation.\n\n" +
                     "~~ Challenge: VR Interaction Design ~~\n" +
                     "Unlike traditional games, VR interactions require players to physically manipulate objects within a three-dimensional space, generally using some form of physics.\n\n" +
                     "To support this, I implemented physics-based interactions and leveraged the VR Expansion Plugin to improve object handling, player comfort, and interaction reliability throughout the experience.\n\n" +
-                    "~~ Challenge: Gameplay Consistency ~~\n" +
+                    "~~ Challenge: Controlled User Testing ~~\n" +
                     "Due to the application being used for academic research, every participant needed to experience the same tasks under the same conditions.\n\n" +
                     "I designed the gameplay loop as a controlled sandbox environment, ensuring all participants completed identical maintenance tasks regardless of which inventory system was being evaluated."
             },
@@ -233,7 +233,7 @@ export const ProjectList: ProjectItem[] = [
                 Title: "User Testing and Research",
                 Body: "• Designed a controlled testing environment for participant studies.\n" +
                     "• Collected and analysed questionnaire data from user testing sessions.\n" +
-                    "• Evaluated immersion, usability, and player preference across both inventory systems.",
+                    "• Evaluated immersion, usability, engagement, and player preference across both inventory systems.",
             },
             {
                 Title: "Results",
@@ -250,7 +250,9 @@ export const ProjectList: ProjectItem[] = [
         slug: "pcg-road-tool",
         Name: "PCG Road Tool",
         ShortDescription: "Road builder tool in UE5 using PCG.",
-        LongDescription: "A PCG tool for UE5, built in C++ with the PCG plugin for Unreal Engine. Create modular road systems with customisable props; just place down a spline! Built with designers in mind, the main purpose is to streamline the world-building process.",
+        LongDescription: "A procedural road generation tool developed in Unreal Engine 5 using C++ and the Procedural Content Generation (PCG) framework. The tool enables designers to rapidly generate modular " +
+            "road networks, roadside props, and surrounding foliage by simply defining a spline path.\n\n" +
+            "Designed with usability and iteration speed in mind, the project focuses on reducing manual world-building effort while maintaining a high degree of customisation and artistic control.",
         YTID: "UuTlaV8B75E",
         ImgSrc: "/PCG/PCGTool-MainShot.png",
         Engine: "Unreal Engine 5",
@@ -267,22 +269,44 @@ export const ProjectList: ProjectItem[] = [
         ],
         Features: [
             {
-                Title: "Feature Breakdown",
-                Body: "• Fully customisable road layouts using splines\n• All controlled through a single blueprint\n• Works with default UE landscape system\n• Modular parameters (Meshes, Foliage, Props)" +
-                    "\n• Complete with user guide\n• Full technical breakdown available upon request!",
+                Title: "Key Features",
+                Body: "~~ Road Generation ~~\n" +
+                    "• Generated complete road layouts from user-defined splines.\n" +
+                    "• Supported modular road meshes and configurable visual variations.\n" +
+                    "• Integrated directly with Unreal Engine's landscape system.\n\n" +
+                    "~~ Procedural Environment Generation ~~\n" +
+                    "• Generated surrounding foliage using Unreal Engine's PCG framework.\n" +
+                    "• Populated roadside areas with configurable props and decorative assets.\n" +
+                    "• Supported randomised placement, while maintaining consistent world composition.\n\n" +
+                    "~~ Designer Workflow ~~\n" +
+                    "• Centralised tool configuration through a single manager Blueprint, reducing setup complexity and improving usability.\n" +
+                    "• Exposed modular parameters for meshes, foliage, props, and generation behaviour.\n" +
+                    "• Included comprehensive documentation and user guidance.\n\n" +
+                    "~~ Technical Architecture ~~\n" +
+                    "• Developed core tool functionality in C++.\n" +
+                    "• Exposed designer-facing parameters through Blueprint, enabling rapid iteration without code changes.\n" +
+                    "• Leveraged Unreal Engine's PCG framework for procedural generation.",
             },
             {
-                Title: "Technical Overview",
-                Body: "Starting with the landscape tool, the user needs to place splines in the desired path for the road. The manager blueprint then generates the road and prop meshes along each spline point. Once a PCG volume has been applied, the manager blueprint assigns " +
-                    "the tree mesh/es to it. The PCG tool then reads the area around the spline, and generates a basic forest. It also adds roadside props using a global Z offset dependant on whether the curb is displayed or not. These 2 areas that the PCG volume utilises " +
-                    "are the only 'random' elements throughout the tool.",
+                Title: "Technical Challenges",
+                Body: "~~ Challenge: Integrating Splines with PCG ~~\n" +
+                    "The road system needed to combine Unreal Engine's spline tools with procedural generation workflows.\n\n" +
+                    "To achieve this, I developed a manager system in C++ that interpreted spline data and used it to drive both mesh placement and PCG generation, ensuring roads, props, and foliage remained synchronised throughout the level.\n\n" +
+                    "~~ Challenge: Designer-Friendly Tooling ~~\n" +
+                    "The primary objective of the tool was to support designers rather than programmers.\n\n" +
+                    "To streamline workflows, all key functionality was exposed through configurable parameters, allowing users to customise meshes, foliage types, roadside props, and generation behaviour without modifying code.\n\n" +
+                    "~~ Challenge: Procedural Environment Placement ~~\n" +
+                    "Roadside environments needed to appear natural while remaining performant and predictable.\n\n" +
+                    "Using Unreal Engine's PCG framework, I developed generation rules that analysed the space surrounding spline paths and populated the environment with foliage and props while respecting road boundaries and placement constraints.",
+            },
+            {
+                Title: "Results",
+                Body: "• Successfully developed a functional procedural road generation tool in Unreal Engine 5.\n" +
+                    "• Reduced road and environment creation to a spline-based workflow.\n" +
+                    "• Integrated procedural foliage and roadside prop placement using PCG.\n" +
+                    "• Produced supporting documentation and user guides for designers.\n" +
+                    "• Open-sourced the project on GitHub.",
                 YTID: "O6RDTR_qnIU"
-            },
-            {
-                Title: "Main Takeaways & Challenges",
-                Body: "For the most part, this tool does exactly what I had intended for and designed. It required me to dive deeper into the spline and landscape systems within the engine in order to create a tool that worked with them seamlessly. " +
-                    "The main challenges that I ran into for this project were mostly scope-related. I had originally severely over-estimated how much was possible using a tool that was brand new to me in 8 weeks. The main challenge that I would like to " +
-                    "try to tackle moving forward is to create the ability to have crossroads; whether that be with a separate intersection mesh, or using the junction system already built-in to the landscape tool. Currently, if 2 roads were to cross, the meshes just clash."
             }
         ]
     },
@@ -292,8 +316,9 @@ export const ProjectList: ProjectItem[] = [
         slug: "twisted-trek",
         Name: "Twisted Trek",
         ShortDescription: "3D platformer set in a stylised forest using UE5.",
-        LongDescription: "Twisted Trek is a 3D platformer set in a stylised forest environment. Unlock your inner explorer as you traverse the land brimming with engaging mechanics and challenging level design. Over the 8-week development cycle, the main " +
-            "focus was rapid prototyping, something that I still personally hail as one of my strongest skills.",
+        LongDescription: "Twisted Trek is a 3D platformer developed in Unreal Engine 5 as a solo project focused on rapid prototyping and gameplay iteration. Over an eight-week development cycle, " +
+            "I designed and implemented a complete gameplay experience featuring traversal mechanics, environmental hazards, progression systems, and player feedback systems.\n\n" +
+            "The project provided valuable experience balancing scope, feature implementation, and production deadlines while delivering a complete playable experience from concept to completion.",
         YTID: "OeaUOSI9_lI",
         ImgSrc: "/TwistedTrek/TwistedTrek_IGScreenShot1.png",
         Engine: "Unreal Engine 5",
@@ -302,45 +327,41 @@ export const ProjectList: ProjectItem[] = [
         Platform: "PC",
         Gallery: ["/TwistedTrek/TwistedTrek_IGScreenShot1.png", "/TwistedTrek/TwistedTrek_IGScreenShot2.png", "/TwistedTrek/TwistedTrek_IGScreenShot3.png", "/TwistedTrek/TwistedTrek_IGScreenShot4.png"],
         Status: "Archived",
-        ProgressionPhases: [
-            {
-                Title: "Section 1 - Ideation",
-                Body: "Twisted Trek started out as a brain-storm of features that I wanted to develop. This very quickly turned into a list of features that you would typically see in a platformer. Due to this project " +
-                    "being created as part of a University module, my only requirements were that the project utilised rapid prototyping (exclusively in blueprint), and the end product was engaging. A platformer ticked both " +
-                    "of these boxes.",
-            },
-            {
-                Title: "Section 2 - Planning",
-                Body: "To design Twisted Trek, I needed to ensure that I had a clear plan heading into development. This meant that I needed to know exactly what I was going to create, and how I was going to it. " +
-                    "This meant created several UML diagrams and flow-charts alongside collecting several assets, all before placing a single blueprint node. This entire process took the best part of a week, and in relfection, " +
-                    "this was the best decision that I made throughout the entire duration of the project, as it ensured a smooth transition from planning to development.",
-            },
-            {
-                Title: "Section 3 - Designing",
-                Body: "The game design itself is fairly straight-forward as my main focus was on the prototyping instead of the level itself. The player spawns in at the start, and there a 3 main sections with their own challenges, " +
-                    "scaling with difficulty as you go through the level. The player can choose to collect keys to open different chests throughout the level, with the main aim being to complete the level faster that the best time.",
-            },
-            {
-                Title: "Section 4 - Prototype & Iteration",
-                Body: "Once in engine, I started by creating my 3D side-scroller character and the complimentary input system. The level pieces themselves took many forms, from moving platforms to lasers. The full list of features are above. " +
-                    "Over the course of the 6 total weeks of development, I had successfully managed to create a full and engaging platformer experience utilising my years of blueprinting experience. Overall, it was a success, but I did also run into a " +
-                    "few challenges along the way. The biggest lesson that I learnt from this project is that with less time for development, there needs to be a compromise with either the amount of content, " +
-                    "or the polish of the content that already exists. I thought that I could balance both, so ended up without either a wide variety of features, or any heavily polished features.",
-            },
-            {
-                Title: "Section 5 - Future Development?",
-                Body: "As it stands, I have no plans to further develop this project. This project helped me out a lot with the overall flow of creating a usable prototype under a deadline, but I have no " +
-                    "reason or motivation to build on the foundations.",
-            },
-        ],
         Features: [
             {
-                Title: "Level Features",
-                Body: "• Lifts\n• Chest/Key System\n• Lasers\n• Spikes\n• Coins\n• Cinematic Camera Transitions",
+                Title: "Gameplay Systems",
+                Body: "~~ Core Gameplay ~~\n" +
+                    "• Developed a complete 3D platforming gameplay loop.\n" +
+                    "• Implemented custom player movement and traversal systems.\n" +
+                    "• Designed progression through multiple difficulty-scaled level sections.\n\n" +
+                    "~~ Interactive Elements ~~\n" +
+                    "• Developed moving platforms and lift systems.\n" +
+                    "• Implemented environmental hazards including lasers and spikes.\n" +
+                    "• Developed collectible and reward systems incorporating keys, chests, and coin pickups.\n\n" +
+                    "~~ Player Experience ~~\n" +
+                    "• Implemented cinematic camera transitions.\n" +
+                    "• Developed save/load functionality for player records and high scores.\n" +
+                    "• Created a fully functional settings menu.",
             },
             {
-                Title: "External Game Features",
-                Body: "• Save/Load System (High Score)\n• Fully Operational Settings Menu",
+                Title: "Technical Challenges",
+                Body: "~~ Challenge: Rapid Development ~~\n" +
+                    "The project was developed within an eight-week timeframe, requiring careful prioritisation of features and development effort.\n\n" +
+                    "To maintain progress, I focused on rapidly prototyping gameplay systems using Blueprints before refining them through iteration, allowing key mechanics to be tested and validated early in development.\n\n" +
+                    "~~ Challenge: Scope Management ~~\n" +
+                    "The initial design scope exceeded what could realistically be delivered within the available development time.\n\n" +
+                    "Throughout development, I continuously evaluated feature priorities and adjusted scope to ensure a complete and playable experience could be delivered without compromising core gameplay functionality.\n\n" +
+                    "~~ Challenge: Gameplay Readability ~~\n" +
+                    "Platforming challenges needed to be immediately understandable while still providing increasing difficulty.\n\n" +
+                    "To achieve this, level sections were structured around progressively more complex obstacles and traversal challenges, allowing players to gradually learn and master mechanics.\n\n"
+            },
+            {
+                Title: "Results",
+                Body: "• Developed a complete playable game within an eight-week production cycle.\n" +
+                    "• Delivered a full gameplay loop from concept through final implementation.\n" +
+                    "• Successfully applied rapid prototyping workflows to gameplay development.\n" +
+                    "• Gained practical experience balancing scope, iteration, and production deadlines.\n" +
+                    "• Implemented and integrated all gameplay systems as a solo developer."
             }
         ]
     },
