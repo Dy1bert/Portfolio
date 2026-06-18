@@ -30,6 +30,7 @@ export interface Project {
     Showcase?: ShowcaseLocations[];
 
     ProgressionPhases?: InfoSection[];
+    Features?: InfoSection[];
 }
 
 export interface GameProject extends Project {
@@ -39,12 +40,14 @@ export interface GameProject extends Project {
     ReleaseDate?: string;
     Role: string;
     Platform?: string;
-    Features?: InfoSection[];
 }
 
 export interface WebProject extends Project {
     Type: "Web";
     Framework: string;
+    Language: string;
+    Styling: string;
+    Hosting: string;
     URL?: string;
 }
 
@@ -371,42 +374,57 @@ export const ProjectList: ProjectItem[] = [
         slug: "portfolio",
         Name: "Portfolio",
         ShortDescription: "This website!",
-        LongDescription: "A necessity turned passion project. This portfolio website is my maiden voyage into the world of web-development and the React framework. Built with NextJS, I planned, designed, and iterated the website until I achieved what you see in front of you!" +
+        LongDescription: "A necessity turned passion project. This portfolio website was developed using Next.js and TypeScript as my introduction to modern web development.\n\n" +
+            "Designed, developed, and maintained independently, the website serves as a central hub for showcasing projects, technical skills, and professional experience. The project " +
+            "provided valuable experience with React-based development, responsive design, component architecture, and deployment workflows." +
             "\n\nSource code available on request!",
         ImgSrc: "/Portfolio/Portfolio_Hero.png",
         Framework: "NextJS",
+        Language: "TypeScript",
+        Styling: "TailwindCSS",
+        Hosting: "Netlify",
         Duration: "12 Weeks",
         URL: "https://dy1bert.dev/",
         Status: "Active",
-        ProgressionPhases: [
+        Features: [
             {
-                Title: "Section 1 - Necessity",
-                Body: "Being a budding Game Dev, as is the case with the vast majority of creative fields, a portfolio is a must. Whether that be in the form of a simple list, an itch.io page, or a fully custom-built website. I had created several portfolios in the past, " +
-                    "mostly using templates and tools from websites such as Wix, and Netlify (who I am currently using to host this site!). As I graduated University and started getting serious about breaking into the industry, I realised that the free templates and " +
-                    "website builders just weren't going to cut it anymore. At heart, I am a creator; I love making things. So here we are, after a couple of months of solo research (and plenty of mistakes), I am the proud owner of my own bespoke portfolio website.",
-                Image: {src: "/Portfolio/CollegePortfolio_SS.png", alt: "Old College Portfolio"}
+              Title: "Website Features",
+              Body: "~~ Project Showcase ~~\n" +
+                  "• Developed dynamic project pages driven by structured data.\n" +
+                  "• Created reusable components for displaying project information, media, and technical breakdowns.\n" +
+                  "• Implemented project categorisation and carousel navigation.\n\n" +
+                  "~~ User Experience ~~\n" +
+                  "• Designed responsive layouts for desktop and mobile devices.\n" +
+                  "• Created clear navigation and content hierarchy to improve discoverability.\n" +
+                  "• Integrated media galleries, embedded video content, and external project links.\n\n" +
+                  "~~ Content Management ~~\n" +
+                  "• Structured project data through reusable TypeScript objects.\n" +
+                  "• Simplified future project additions through a scalable content architecture.\n" +
+                  "• Designed the website to support ongoing portfolio growth and maintenance.\n\n" +
+                  "~~ Deployment ~~\n" +
+                  "• Deployed and maintained the website using Netlify.\n" +
+                  "• Integrated GitHub-based version control workflows.\n" +
+                  "• Implemented iterative updates through continuous deployment."
             },
             {
-                Title: "Section 2 - Design",
-                Body: "Once I had decided it was time to learn how to do this, I then took to the well of knowledge that is YouTube and searched 'how to create a website'. After going down that rabbit hole for a little while, I stumbled across the channel 'JavaScript Mastery'. " +
-                    "This was my first step in starting my journey as a web developer. As is the case with any good project, the next stage was to start to design the layouts and plan the content that I wanted on each page. For this, I used Figma to mock up a basic layout. " +
-                    "My main intention was to keep the website layout concise, with no confusing paths or unclear sections. Naturally, some aspects were adapted during development, but overall, the design was successful.",
-                Image: {src: "/Portfolio/FigmaPlan.png", alt: "Figma Plan"}
+                Title: "Technical Challenges",
+                Body: "~~ Challenge: Learning an Unfamiliar Technology Stack ~~\n" +
+                    "The project required learning modern web development technologies from scratch, including React, Next.js, TypeScript, and Tailwind CSS.\n\n" +
+                    "To accelerate development, I focused on building practical features while simultaneously learning the underlying concepts, allowing the project itself to serve as both a learning platform and a production application.\n\n" +
+                    "~~ Challenge: Scalable Project Architecture ~~\n" +
+                    "The website needed to support future portfolio growth without requiring major structural changes.\n\n" +
+                    "To achieve this, project information was separated from presentation logic using structured TypeScript data models and reusable React components, allowing new projects to be added with minimal development effort.\n\n" +
+                    "~~ Challenge: Responsive Design ~~\n" +
+                    "The website needed to provide a consistent experience across desktop, tablet, and mobile devices.\n\n" +
+                    "I designed reusable layouts and responsive UI components that adapt to different screen sizes while maintaining readability and usability."
             },
             {
-                Title: "Section 3 - Learning & Making Mistakes",
-                Body: "As is the case when learning something new, the process didn't go 100% to plan, nor did it go anywhere near as smooth as I would've liked. I had to recreate the entire project once as I managed to break something in the dependencies whilst trying to " +
-                    "import a 'shadcn' component. There are also components and sections that I built at the start of the project that I would love to adapt with my new-found knowledge, but my priority is publishing the site before any minor tweaks. The experience has been " +
-                    "far from doom and gloom though! I have managed to go from zero JavaScript and web development knowledge, to creating a usable, clean, and effective personal portfolio. I have been able to implement all of the features that I wanted. Up to this point, " +
-                    "I have used:\n" +
-                    "\n" +
-                    "• NextJS -> React (TypeScript, HTML, CSS with Tailwind)\n• Figma\n• shadcn\n• JetBrains WebStorm\n• GitHub",
-            },
-            {
-                Title: "Section 4 - What Now?",
-                Body: "As it stands, the website is finished in terms of content and layout. I am pleased with the end result, and the things that I have learnt over the time that I have been developing this website. Of course, as I evolve, there will " +
-                    "be more projects to add/change. Potentially, in the future, I may either overhaul, or re-create the website.",
-            },
+                Title: "Results",
+                Body: "• Successfully designed, developed, and deployed a custom portfolio website.\n" +
+                    "• Learned and applied Next.js, React, TypeScript, Tailwind CSS, and component-based development principles.\n" +
+                    "• Created a scalable platform for showcasing projects and professional experience.\n" +
+                    "• Established a foundation for future web development projects and continued learning."
+            }
         ]
     },
 ];

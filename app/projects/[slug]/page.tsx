@@ -76,6 +76,21 @@ export default async function ProjectPage({ params }: PageProps) {
                             Framework: {project.Framework}
                         </span>
                     )}
+                    {project.Type === "Web" && project.Language && (
+                        <span className="bg-neutral-800 px-3 py-1 rounded-lg">
+                            Language: {project.Language}
+                        </span>
+                    )}
+                    {project.Type === "Web" && project.Styling && (
+                        <span className="bg-neutral-800 px-3 py-1 rounded-lg">
+                            Styling: {project.Styling}
+                        </span>
+                    )}
+                    {project.Type === "Web" && project.Hosting && (
+                        <span className="bg-neutral-800 px-3 py-1 rounded-lg">
+                            Hosting: {project.Hosting}
+                        </span>
+                    )}
 
                 </div>
 
@@ -138,17 +153,17 @@ export default async function ProjectPage({ params }: PageProps) {
                 )}
 
                 {/* Feature Showcase */}
-                {project.Type === "Game" && project.Features && (
+                {project.Features && (
                     <div className="mt-8 border-t border-background-b/25 max-w-7xl w-full"/>
                 )}
-                {project.Type === "Game" && project.Features && (
+                {project.Features && (
                     <div className="mt-8 flex flex-col max-w-5xl w-full md:items-start items-center">
                         <h2 className="text-2xl font-semibold">
                             Features & Technical Breakdown
                         </h2>
                     </div>
                 )}
-                {project.Type === "Game" && project.Features && (
+                {project.Features && (
                     project.Features.map((feature, index) => (
                         <li key={index} className="mt-8 flex flex-col w-full max-w-5xl md:items-start items-center">
                             <h2 className="tracking-[0.2em] text-xs">{feature.Title}</h2>
